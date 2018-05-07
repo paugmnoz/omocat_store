@@ -1,0 +1,36 @@
+{
+    "camisas": [
+        {
+            "artista": "crysalis",
+            "nombre": "HELLO T-Shirt",
+            "talla": "M",
+            "precio": 30,
+            "img_principal": ""
+
+        },
+        {
+            "artista": "crysalis",
+            "nombre": "CHEESE! T-Shirt",
+            "talla": "M",
+            "precio": 35,
+            "img_principal": ""
+
+        },
+        {
+            "artista": "sebqr",
+            "nombre": "HELLO T-Shirt",
+            "talla": "M",
+            "precio": 30,
+            "img_principal": ""
+
+        },
+        {
+            "artista": "porter",
+            "nombre": "HELLO T-Shirt",
+            "talla": "M",
+            "precio": 35,
+            "img_principal": ""
+
+        }
+    ]
+}
