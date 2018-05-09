@@ -1,36 +1,84 @@
 {
     "sweaters": [
         {
-            "artista": "crysalis",
-            "nombre": "HELLO T-Shirt",
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
             "talla": "M",
-            "precio": 30,
-            "img_principal": ""
-
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
         },
         {
-            "artista": "crysalis",
-            "nombre": "CHEESE! T-Shirt",
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
             "talla": "M",
-            "precio": 35,
-            "img_principal": ""
-
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
         },
         {
-            "artista": "sebqr",
-            "nombre": "HELLO T-Shirt",
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
             "talla": "M",
-            "precio": 30,
-            "img_principal": ""
-
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
         },
         {
-            "artista": "porter",
-            "nombre": "HELLO T-Shirt",
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
             "talla": "M",
-            "precio": 35,
-            "img_principal": ""
-
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+        },
+        {
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
+            "talla": "M",
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+        },
+        {
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
+            "talla": "M",
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+        },
+        {
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
+            "talla": "M",
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+        },
+        {
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
+            "talla": "M",
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+        },
+        {
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
+            "talla": "M",
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+        },
+        {
+            "artista": "HIZGI",
+            "nombre": "YUUREIGIRL Sweater",
+            "talla": "M",
+            "color": "black",
+            "precio": 60.00,
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
         }
     ]
 }

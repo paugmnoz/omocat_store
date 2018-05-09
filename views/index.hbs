@@ -6,47 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
- 
+
 </head>
 
-<body  style="  width:80%; margin:auto;">
-    <h2>Carrito: <span class="carrito">0</span></h2>
+<body style="  width:80%; margin:auto;">
+    <h2>Carrito:
+        <span class="carrito">0</span>
+    </h2>
     <a href="checkout">Checkout</a>
     <h1>SWEATERS</h1>
     <h3>Filtrar por artista</h2>
         <a href="/?artista=crysalis">Crysalis</a>
         <a href="/?artista=sebqr">Sebqr</a>
         <a href="/">Todas</a>
-    
-    <br/>
 
-     <h3>Filtrar por color</h2>
-        <a href="/?artista=crysalis">Crysalis</a>
-        <a href="/?artista=sebqr">Sebqr</a>
-        <a href="/">Todas</a>
-   
-    <div style="display:flex;
+        <br/>
+
+        <h3>Filtrar por color</h2>
+            <a href="/?artista=crysalis">Crysalis</a>
+            <a href="/?artista=sebqr">Sebqr</a>
+            <a href="/">Todas</a>
+
+            <div style="display:flex;
                 width:600px;
                 margin:auto;">
-     {{#each sweaters}} 
-        <div class="camisa"  style="flex: 1 1 40%"
-            data-id="{{this._id}}" >
-          
-            <a href="/sweater/{{artista}}">
-           <img src="{{img_principal}}" alt="">
-            <h5>{{nombre}}</h5> 
-            <p>{{artista}}</p>
-            <p>{{talla}}</p>
-            </a>
-            <button class="add">Add</button>
-            
-                  </div>
-          {{/each}}
-    </div>
+                {{#each sweaters}}
+                <div class="camisa" style="flex: 1 1 40%" data-id="{{this._id}}">
+                    <a href="/sweater/{{artista}}">
+                        <img src="{{img_principal}}" alt="">
+                        <h5>{{nombre}}</h5>
+                        <p>{{artista}}</p>
+                        <p>{{talla}}</p>
+                    </a>
+                    <button class="add">Add</button>
 
-       
-<script src='js/cliente.js'></script>
-<script src='js/productos.js'></script>
+                </div>
+                {{/each}}
+            </div>
+
+
+            <script src='js/cliente.js'></script>
+            <script src='js/productos.js'></script>
 
 </body>
 
