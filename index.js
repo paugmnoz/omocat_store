@@ -66,7 +66,7 @@ app.get('/checkout', (req, res) => {
 
 app.get('/sweater/:id', (req, res) => {
     db.collection('sweaters').find({
-            nombre: req.params.id
+            artista: req.params.id
         })
         .toArray((err, result) => 
             res.render(result) //fin res.render
