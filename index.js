@@ -15,12 +15,20 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 //Conectarse a la base de datos
-MongoClient.connect('mongodb://localhost:27017', function (err, client) {
+MongoClient.connect(`mongodb+srv://cluster0-fxkcz.mongodb.net/OmocatProducts`, 
+{
+    auth: {
+        user: 'polagmnoz',
+        password: 'p964908.'
+    }
+
+}, 
+function (err, client) {
     if (err) throw err;
 
-    db = client.db('Products');
+    db = client.db('OmocatProducts');
     //iniciar servidor
-    var server = app.listen(1889);
+    var server = app.listen( process.env.port || 1889);
 });
 
 
