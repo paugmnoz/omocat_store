@@ -24,11 +24,12 @@ MongoClient.connect(`mongodb+srv://cluster0-fxkcz.mongodb.net/test`,
 
 }, 
 function (err, client) {
-    if (err) throw err;
+    if (err) {throw err;}
+    else {
 
     db = client.db('OmocatProducts');
     //iniciar servidor
-    var server = app.listen( process.env.port || 1889);
+    var server = app.listen( process.env.port || 1889);}
 });
 
 
