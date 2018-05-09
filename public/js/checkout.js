@@ -13,6 +13,6 @@ fetch('http://localhost:1889/productosPorIds?ids=' + arreglo)
 
         var lista = document.querySelector('.lista');
         res.forEach(function (elem) {
-            lista.innerHTML += '<li>' + elem.nombre + '</li>';
+            lista.innerHTML += '<li>' + elem.nombre + '<button class="delete">X</button>' + '</li>';
         });
     });

@@ -66,9 +66,7 @@ app.get('/checkout', (req, res) => {
 });
 
 app.get('/sweater/:id', (req, res) => {
-    db.collection('sweaters').find({
-            artista: req.params.id
-        })
+    db.collection('sweaters').find({ artista: req.params.id })
         .toArray((err, result) => 
             res.render(result) //fin res.render
         )
@@ -76,7 +74,7 @@ app.get('/sweater/:id', (req, res) => {
 
 
 app.get('/productosPorIds', (req, res) => {
-    console.log(req.query.ids);
+    console.log('asdas' + req.query.ids);
   /*  res.send({
         mensaje: 'ok, todo esta bien'
     });*/
