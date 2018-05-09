@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
                 camisas: result
             });//fin res.render
         })*/
-    var product = db.collection('camisas')
+    var product = db.collection('sweaters')
         .find();
 
     if (req.query.artista)
@@ -65,7 +65,7 @@ app.get('/checkout', (req, res) => {
 });
 
 app.get('/camisa/:id', (req, res) => {
-    db.collection('camisas').find({
+    db.collection('sweaters').find({
             nombre: req.params.id
         })
         .toArray((err, result) => 
@@ -84,7 +84,7 @@ app.get('/productosPorIds', (req, res) => {
     arreglo = arreglo.map(function (id) {
         return new ObjectID(id);
     });
-    var product = db.collection('camisas')
+    var product = db.collection('sweaters')
         .find({
             _id: {
                 $in: arreglo
