@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 //Conectarse a la base de datos
-MongoClient.connect(`mongodb+srv://polagmnoz:<p964908.>@cluster0-fxkcz.mongodb.net/test`, 
+MongoClient.connect(`mongodb+srv://cluster0-fxkcz.mongodb.net/test`, 
 {
     auth: {
         user: 'polagmnoz',
