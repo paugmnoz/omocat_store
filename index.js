@@ -29,7 +29,7 @@ function (err, client) {
 
     db = client.db('OmocatProducts');
     //iniciar servidor
-    var server = app.listen( process.env.port || 1889);}
+    var server = app.listen( process.env.PORT || 1889);}
 });
 
 
@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
 
     product.toArray((err, result) => {
         res.render('index', {
-            camisas: result
+            sweaters: result
         }); //fin res.render
     });
 
@@ -77,9 +77,9 @@ app.get('/sweater/:id', (req, res) => {
 
 app.get('/productosPorIds', (req, res) => {
     console.log(req.query.ids);
-    res.send({
+  /*  res.send({
         mensaje: 'ok, todo esta bien'
-    });
+    });*/
 
     var arreglo = req.query.ids.split(',');
     arreglo = arreglo.map(function (id) {
@@ -91,10 +91,7 @@ app.get('/productosPorIds', (req, res) => {
                 $in: arreglo
             }
         })
-
         .toArray((err, result) => {
             res.send(result);
         });
-
-
 });

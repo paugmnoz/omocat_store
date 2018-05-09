@@ -9,8 +9,7 @@
  
 </head>
 
-<body  style="  width:80%;
-                margin:auto;">
+<body  style="  width:80%; margin:auto;">
     <h2>Carrito: <span class="carrito">0</span></h2>
     <a href="checkout">Checkout</a>
     <h1>SWEATERS</h1>
@@ -25,12 +24,13 @@
         <a href="/?artista=crysalis">Crysalis</a>
         <a href="/?artista=sebqr">Sebqr</a>
         <a href="/">Todas</a>
+   
     <div style="display:flex;
                 width:600px;
                 margin:auto;">
-     {{#each camisas}} 
+     {{#each sweaters}} 
         <div class="camisa"  style="flex: 1 1 40%"
-data-id="{{this._id}}" >
+            data-id="{{this._id}}" >
           
             <a href="/sweater/{{artista}}">
            <img src="{{img_principal}}" alt="">
