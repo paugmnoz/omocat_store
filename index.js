@@ -73,7 +73,7 @@ app.get('/sweater/:id', (req, res) => {
         .toArray((err, result) =>
             //res.render(result) //fin res.render
             res.render('producto', {
-                    prod: result
+                  prod: result
                 }
             )
         )

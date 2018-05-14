@@ -7,7 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    Hello
-    {{prod}}
+
+    <header>
+          <nav class="globalNav">
+        <img class="icon" src="resources/icon.png" alt="">
+        <a href="#" class="typoLogo">Omocat</a>
+        <a href="#" class="menuOptions">clothing</a>
+        <a href="#" class="menuOptions">artwork</a>
+        <a href="#" class="menuOptions">us</a>
+        <a href="#" class="menuOptions">contact</a>
+    </nav>
+
+    </header>
+
+     {{#each prod}}
+                <div  >
+                        <img src="{{this.img_principal}}" alt="">
+                        <h5>{{nombre}}</h5>
+                        <p>{{artista}}</p>
+                        <p>{{precio}}</p>
+                    
+                </div>
+                {{/each}}
+    
 </body>
 </html>

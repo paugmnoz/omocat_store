@@ -5,48 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900" rel="stylesheet">
     <title>Document</title>
 
 </head>
 
-<body style="  width:80%; margin:auto;">
-    <h2>Carrito:
+<body>
+
+    <nav class="globalNav">
+        <img class="icon" src="img/brand/icon.png" alt="">
+        <a href="#" class="typoLogo">Omocat</a>
+        <a href="#" class="menuOptions">clothing</a>
+        <a href="#" class="menuOptions">artwork</a>
+        <a href="#" class="menuOptions">us</a>
+        <a href="#" class="menuOptions">contact</a>
+    </nav>
+
+
+    <section class="container">
+    
+    <section class="filters">
+
+        
+  <h2>Carrito:
         <span class="carrito">0</span>
     </h2>
     <a href="checkout">Checkout</a>
-    <h1>SWEATERS</h1>
-    <h3>Filtrar por artista</h2>
-        <a href="/?artista=crysalis">Crysalis</a>
-        <a href="/?artista=sebqr">Sebqr</a>
-        <a href="/">Todas</a>
-
-        <br/>
-
-        <h3>Filtrar por color</h2>
-            <a href="/?artista=crysalis">Crysalis</a>
-            <a href="/?artista=sebqr">Sebqr</a>
+ <h1 class="title shadow">CLOTHING</h1>
+ <h1 class="title overshadow">SWEATERS</h1>
+    <h2>FILTER BY</h2>
+        <h3>ARTIST</h3>
+            <a href="/?artista=OMOCAT">OMOCAT</a>
+            <a href="/?artista=HIZGI">Hizgi</a>
+            <a href="/?artista=CHU NAP">CHU NAP</a>
+            <a href="/?artista=CHOO">CHOO</a>
             <a href="/">Todas</a>
 
-            <div style="display:flex;
-                width:600px;
-                margin:auto;">
+     <h3>COLOR</h3>
+            <a href="/?artista=OMOCAT">Yellow</a>
+            <a href="/?artista=HIZGI">Black</a>
+            <a href="/?artista=CHU NAP">Blue</a>
+            <a href="/?artista=CHOO">Green</a>
+            <a href="/">Todas</a>
+
+     <h3>FPRICE</h3>
+            <a href="/?artista=OMOCAT">OMOCAT</a>
+            <a href="/?artista=HIZGI">Hizgi</a>
+            <a href="/?artista=CHU NAP">CHU NAP</a>
+            <a href="/?artista=CHOO">CHOO</a>
+            <a href="/">Todas</a>
+
+
+    </section>
+
+    <section class="prod_results">
                 {{#each sweaters}}
-                <div class="camisa" style="flex: 1 1 40%" data-id="{{this._id}}">
+                <div class="sweater"  data-id="{{this._id}}">
                     <a href="/sweater/{{nombre}}">
                         <img src="{{img_principal}}" alt="">
                         <h5>{{nombre}}</h5>
                         <p>{{artista}}</p>
-                        <p>{{talla}}</p>
                     </a>
                     <button class="add">Add</button>
 
                 </div>
                 {{/each}}
-            </div>
+    </section>
+   
+           
 
+
+    </section>
+  
 
             <script src='js/cliente.js'></script>
             <script src='js/productos.js'></script>
+            <script src='js/script.js'></script>
 
 </body>
 
