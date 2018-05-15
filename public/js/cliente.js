@@ -7,3 +7,5 @@ if(arreglo == null) arreglo = [];
 console.log(arreglo);
 
 actualizarCarrito();
+
+

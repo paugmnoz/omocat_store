@@ -6,31 +6,35 @@
             "talla": "M",
             "color": "black",
             "precio": 60.00,
-            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg"
+            "img_principal": "img/principal/YUUREIGIRL_sweater.jpg",
+            "img_temp": "img/secondary/YUUREIGIRL_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
             "nombre": "Cyclop Sweater",
             "talla": "M",
             "color": "yellow",
-            "precio": 60.00,
-            "img_principal": "img/principal/cyclopsgirlfinal_sweater.jpg"
+            "precio": 55.00,
+            "img_principal": "img/principal/cyclopsgirlfinal_sweater.jpg",
+            "img_temp": "img/secondary/cyclopsgirlfinal_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
             "nombre": "Demon Boy Sweater",
             "talla": "M",
             "color": "blue",
-            "precio": 60.00,
-            "img_principal": "img/principal/demonboy_sweater.jpg"
+            "precio": 50.00,
+            "img_principal": "img/principal/demonboy_sweater.jpg",
+            "img_temp": "img/secondary/demonboy_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
             "nombre": "FISHBoy Sweater",
             "talla": "M",
             "color": "red",
-            "precio": 60.00,
-            "img_principal": "img/principal/FISHBOY_sweater.jpg"
+            "precio": 45.00,
+            "img_principal": "img/principal/FISHBOY_sweater.jpg",
+            "img_temp": "img/secondary/FISHBOY_sweater.jpg"
         },
         {
             "artista": "CHU NAP",
@@ -38,55 +42,62 @@
             "talla": "M",
             "color": "blue",
             "precio": 60.00,
-            "img_principal": "img/principal/FLUFie_sweater.jpg"
+            "img_principal": "img/principal/FLUFie_sweater.jpg",
+            "img_temp": "img/secondary/FLUFie_sweater.jpg"
         },
         {
             "artista": "CHU NAP",
             "nombre": "Forest Spirit Sweater",
             "talla": "M",
             "color": "green",
-            "precio": 60.00,
-            "img_principal": "img/principal/FORESTSPIRIT_sweater.jpg"
+            "precio": 55.00,
+            "img_principal": "img/principal/FORESTSPIRIT_sweater.jpg",
+            "img_temp": "img/secondary/FORESTSPIRIT_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
             "nombre": "Fundashi Sweater",
             "talla": "M",
             "color": "black",
-            "precio": 60.00,
-            "img_principal": "img/principal/fudanshi_sweater.jpg"
+            "precio": 45.00,
+            "img_principal": "img/principal/fudanshi_sweater.jpg",
+            "img_temp": "img/secondary/fudanshi_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
             "nombre": "Fujoshi Sweater",
             "talla": "M",
             "color": "black",
-            "precio": 60.00,
-            "img_principal": "img/principal/fujoshi_sweater.jpg"
+            "precio": 45.00,
+            "img_principal": "img/principal/fujoshi_sweater.jpg",
+            "img_temp": "img/secondary/fujoshi_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
             "nombre": "Pretty Boy Sweater",
             "talla": "M",
             "color": "blue",
-            "precio": 60.00,
-            "img_principal": "img/principal/prettyboy_sweater.jpg"
+            "precio": 50.00,
+            "img_principal": "img/principal/prettyboy_sweater.jpg",
+            "img_temp": "img/secondary/prettyboy_sweater.jpg"
         },
         {
             "artista": "CHOO",
             "nombre": "Supper Sweater",
             "talla": "M",
             "color": "black",
-            "precio": 60.00,
-            "img_principal": "img/principal/supper_sweater.jpg"
+            "precio": 55.00,
+            "img_principal": "img/principal/supper_sweater.jpg",
+            "img_temp": "img/secondary/supper_sweater.jpg"
         },
         {
             "artista": "CHOO",
             "nombre": "To the Sea Sweater",
             "talla": "M",
             "color": "gray",
-            "precio": 60.00,
-            "img_principal": "img/principal/tothesea_sweater.jpg"
+            "precio": 35.00,
+            "img_principal": "img/principal/tothesea_sweater.jpg",
+            "img_temp": "img/secondary/tothesea_sweater.jpg"
         },
         {
             "artista": "OMOCAT",
@@ -94,7 +105,8 @@
             "talla": "M",
             "color": "gray",
             "precio": 60.00,
-            "img_principal": "img/principal/underwater_sweater.jpg"
+            "img_principal": "img/principal/underwater_sweater.jpg",
+            "img_temp": "img/secondary/underwater_sweater.jpg"
         }
     ]
 }

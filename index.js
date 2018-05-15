@@ -32,9 +32,7 @@ MongoClient.connect(`mongodb+srv://cluster0-fxkcz.mongodb.net/test`, {
             var server = app.listen(process.env.PORT || 1889);
         }
     });
-
-
-
+   
 app.get('/', (req, res) => {
     /*    db.collection('camisas')
         .find()
@@ -49,6 +47,11 @@ app.get('/', (req, res) => {
     if (req.query.artista)
         product.filter({
             artista: req.query.artista
+        });
+
+        if (req.query.color)
+        product.filter({
+            color: req.query.color
         });
 
     product.toArray((err, result) => {
