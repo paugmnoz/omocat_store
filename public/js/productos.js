@@ -2,7 +2,7 @@ var slider = document.querySelector('#slider');
 var sliderMax = document.querySelector('#sliderMax');
 document.querySelector('.minMax').addEventListener('click', function(e){
     e.preventDefault();
-    location.href = '/?min=' + slider.value + '&max='+sliderMax.value;
+    location.href = '/?min=' + slider.value + '&max='+sliderMax.value+'#results';
 });
 
 document.querySelectorAll('.add').forEach(function (button) {

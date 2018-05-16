@@ -42,6 +42,12 @@ fetch('http://localhost:1889/productosPorIds?ids=' + arreglo)
                 });
 
             });
-
+     
         });
     });
+
+    document.querySelector('.submit').addEventListener('click', function(){
+        localStorage.removeItem('arreglo');
+    }
+
+    );

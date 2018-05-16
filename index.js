@@ -54,18 +54,23 @@ app.get('/', (req, res) => {
             color: req.query.color
         });
 
+        if (req.query.color)
+        product.filter({
+            color: req.query.color
+        });
+
         if(req.query.min & req.query.max) {
             var {min, max} = req.query;
             console.log(max)
     
-            product.filter(
-                function() {
-                    var price = product.precio;
-                    console.log('sdsds'+price);
-                    return price >= minPrice && price <= maxPrice;
+            product.filter({
+                precio: {
+                    $gt: parseFloat(min-1), $lt: parseFloat(max+1)
                 }
+            }
+               
                );
-        }
+            }
   
     
 
