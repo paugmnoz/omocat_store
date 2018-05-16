@@ -3,42 +3,30 @@
   padding: 0;
 }
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://example.com/MaterialIcons-Regular.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
 a {
   text-decoration: none;
   font-family: "Work Sans", sans-serif;
   transition: all 0.2s;
+}
+
+.mainBtn {
+  padding: 7px 15px 7px 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16;
+  transition: all 0.2s;
+}
+
+.mainBtn:hover {
+  background-color: #ff4746;
+}
+
+hr {
+  border-top: 0.8px solid #9c9c9c;
+  background-color: #cacaca;
 }
 
 body {
@@ -223,7 +211,6 @@ body {
 
 .prod_results .sweater a:visited {
   text-decoration: none;
-  decoration: none;
   color: black;
 }
 
@@ -246,21 +233,20 @@ body#checkoutBody {
 }
 
 .cart {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
+  display: inline-block;
   text-decoration: none;
   list-style: none;
+  padding-top: 2em;
+  margin-bottom: 5em;
 }
 
 .cart .left {
-  width: 50%;
-  order: 0;
-  flex: 0 1 auto;
-  align-self: auto;
+  width: 60%;
+  display: inline-block;
+}
+
+.cart .left hr {
+  width: 80%;
 }
 
 .cart .left ul {
@@ -291,6 +277,10 @@ body#checkoutBody {
   align-content: flex-start;
   align-items: flex-start;
   width: 100%;
+}
+
+.cart .left .cartItem h4 {
+  margin-bottom: 1em;
 }
 
 .cart .left .cartItem .delete {
@@ -326,12 +316,66 @@ body#checkoutBody {
   align-self: center;
 }
 
-.cart .right {
-  width: 50%;
+.cart .left .sub_div, .cart .left .ship_div {
+  color: #575757;
+}
+
+.cart .left .ship_div {
+  margin-bottom: 1em;
+}
+
+.cart .left .sub_div, .cart .left .ship_div, .cart .left .total_div {
+  width: 78%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 1em 2em 0 0;
+}
+
+.cart .left .sub_div p, .cart .left .ship_div p, .cart .left .total_div p {
   order: 0;
   flex: 0 1 auto;
   align-self: auto;
+}
+
+.cart .left .sub_div h3, .cart .left .ship_div h3, .cart .left .total_div h3 {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.cart .right {
+  width: 30%;
+  display: inline-block;
+  position: fixed;
   background-color: white;
+  padding: 2em;
+}
+
+.cart .right h3 {
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+
+.cart .right input {
+  padding: 10px;
+  margin: 0 0 1em 0;
+}
+
+.cart .right input.longInput {
+  width: 93%;
+}
+
+.cart .right input.shortInput {
+  width: 43%;
+}
+
+.cart .right input.blockInput {
+  display: block;
+  width: 93%;
 }
 
 @keyframes loading {

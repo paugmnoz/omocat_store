@@ -71,15 +71,14 @@ app.get('/checkout', (req, res) => {
 
 app.get('/sweater/:id', (req, res) => {
     db.collection('sweaters').find({
-            nombre: req.params.id
+            uri_name:  req.params.id
         })
-        .toArray((err, result) =>
+        .toArray((err, result) => {
             //res.render(result) //fin res.render
-            res.render('producto', {
-                  prod: result
-                }
-            )
-        )
+            res.render('sweater_detail', {
+                  prod: result                });
+                  
+           });
 });
 
 

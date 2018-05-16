@@ -77,13 +77,14 @@
         <section class="prod_results">
             {{#each sweaters}}
             <div class="sweater" data-id="{{this._id}}">
-                <a href="/sweater/{{nombre}}">
+                <a href="/sweater/{{uri_name}}">
 
                     <img class="productImg principal" src="{{img_principal}}" alt="">
                     <h5>{{nombre}}</h5>
                     <p>{{artista}}</p>
+                    <p>${{precio}}.00</p>
                 </a>
-                <button class="add">Add</button>
+                <button class="add mainBtn">Add</button>
 
             </div>
             {{/each}}
