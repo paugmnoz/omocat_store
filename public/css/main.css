@@ -400,11 +400,21 @@ body#checkoutBody {
   background-color: #fafafa !important;
 }
 
+.product .left img {
+  width: 100%;
+  height: auto;
+}
+
 .product .right {
   order: 0;
   flex: 0 1 auto;
   align-self: auto;
   width: 45%;
+}
+
+.product .right img {
+  width: 80%;
+  height: auto;
 }
 
 @keyframes loading {
