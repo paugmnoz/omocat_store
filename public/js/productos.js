@@ -1,3 +1,10 @@
+var slider = document.querySelector('#slider');
+var sliderMax = document.querySelector('#sliderMax');
+document.querySelector('.minMax').addEventListener('click', function(e){
+    e.preventDefault();
+    location.href = '/?min=' + slider.value + '&max='+sliderMax.value;
+});
+
 document.querySelectorAll('.add').forEach(function (button) {
     button.addEventListener('click', function () {
         console.log('holi boton');

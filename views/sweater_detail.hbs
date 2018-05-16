@@ -7,101 +7,145 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            {{#each prod}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {{#each prod}}
 
     <title>{{nombre}}</title>
-            {{/each}}
+    {{/each}}
     <style>
-* {
-  margin: 0;
-  padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-a {
-  text-decoration: none;
-  font-family: "Work Sans", sans-serif;
-  transition: all 0.2s;
-}
+        a {
+            text-decoration: none;
+            font-family: "Work Sans", sans-serif;
+            transition: all 0.2s;
+        }
 
-body {
-  margin: 0;
-  font-family: "Work Sans", sans-serif;
-}
-
-.globalNav {
-  width: 100%;
-  height: 60px;
-  padding-left: 5%;
-  margin: 0px auto 0 auto;
-  overflow: hidden;
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-top: 1em;
-  background-color: white;
-  padding-bottom: 0.5em;
-  z-index: 1000;
-}
-
-.globalNav .icon {
-  width: auto;
-  height: 80%;
-  margin-right: 1em;
-}
-
-.globalNav a {
-  color: black;
-  font-variant: small-caps;
-}
-
-.globalNav a.typoLogo {
-  font-weight: 900;
-  font-size: 30;
-  margin-right: 2em;
-}
-
-.globalNav a.menuOptions:hover {
-  color: #ff4746;
-}
-
-.globalNav a.menuOptions {
-  font-weight: 700;
-  font-size: 21;
-  margin-right: 2em;
-  transition: 1s;
-  align-items: center;
-}
-
-.globalNav .filler {
-  flex-grow: 0.8;
-  text-align: right;
-  margin-right: 2em;
-}
-
-.globalNav .carritoview img {
-  width: auto;
-  height: 25px;
-}
-
-.globalNav .carrito {
-  padding: 0 5px 0 5px;
-  width: 10px;
-  color: white;
-  margin: -45px 0 0 18px;
-  z-index: 10002;
-  border-radius: 50%;
-  background-color: #ff4746;
-}     
+        body {
+            margin: 0;
+            font-family: "Work Sans", sans-serif;
+        }
 
 
-.container {
-  width: 90%;
-  margin: 0px auto 0 auto;
-  padding-top: 120px;
-}
+        .mainBtn {
+            padding: 7px 15px 7px 10px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-family: "Work Sans", sans-serif;
+            font-weight: 600;
+            font-size: 16;
+            transition: all 0.2s;
+        }
 
+        .mainBtn:hover {
+            background-color: #ff4746;
+        }
+
+        .globalNav {
+            width: 100%;
+            height: 60px;
+            padding-left: 5%;
+            margin: 0px auto 0 auto;
+            overflow: hidden;
+            position: fixed;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 1em;
+            background-color: white;
+            padding-bottom: 0.5em;
+            z-index: 1000;
+        }
+
+        .globalNav .icon {
+            width: auto;
+            height: 80%;
+            margin-right: 1em;
+        }
+
+        .globalNav a {
+            color: black;
+            font-variant: small-caps;
+        }
+
+        .globalNav a.typoLogo {
+            font-weight: 900;
+            font-size: 30;
+            margin-right: 2em;
+        }
+
+        .globalNav a.menuOptions:hover {
+            color: #ff4746;
+        }
+
+        .globalNav a.menuOptions {
+            font-weight: 700;
+            font-size: 21;
+            margin-right: 2em;
+            transition: 1s;
+            align-items: center;
+        }
+
+        .globalNav .filler {
+            flex-grow: 0.8;
+            text-align: right;
+            margin-right: 2em;
+        }
+
+        .globalNav .carritoview img {
+            width: auto;
+            height: 25px;
+        }
+
+        .globalNav .carrito {
+            padding: 0 5px 0 5px;
+            width: 10px;
+            color: white;
+            margin: -45px 0 0 18px;
+            z-index: 10002;
+            border-radius: 50%;
+            background-color: #ff4746;
+        }
+
+
+        .container {
+            width: 95%;
+            margin: 0px auto;
+            padding-top: 120px;
+         
+        }
+
+        .product {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .product .left {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+            width: 48%;
+            background-color: rgb(250, 250, 250) !important;
+            padding: 1.5em;
+        }
+
+        .product .right {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+            width: 48%;
+            background-color: #ff4746;
+            padding: 1.5em 0 0 0;
+
+        }
     </style>
 </head>
 
@@ -121,18 +165,47 @@ body {
             <div class="carrito">0</div>
         </a>
     </nav>
-    <section class="container">
-        {{#each prod}}
-        <div>
-            <img src="{{this.img_principal}}" alt="">
-            <h5>{{nombre}}</h5>
-            <p>{{artista}}</p>
-            <p>{{precio}}</p>
-        </div>
-        {{/each}}
-    </section>
+    <div class="container">
+        <section class="product">
 
-    
+            {{#each prod}}
+            <div class="left">
+                <img src="{{this.img_principal}}" alt="">
+                <p>{{artista}}</p>
+                <h1>{{nombre}}</h1>
+                <p>${{precio}}.00</p>
+                <button class="mainBtn">Add to Cart</button>
+                <h4>About the artist</h4>
+                <div class="artistDiv">
+                    <div class="imgArt">
+                        <img src="" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Drawings, comics & ceramics. Lives & works in Toronto</p>
+                        <a>[Twitter]</a>
+                        <a href="">[Instagram]</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="right">
+                <img src="" alt="">
+            </div>
+        </section>
+        <section class="product">
+            <div class="left">
+                <img src="" alt="">
+            </div>
+            <div class="right">
+                <h2>Details</h2>
+                <p>Original design by the artist CHU NAP screen-prin- ted on a pre-shrunk UNISEX 50% cotton / 50% pol- yester,
+                    8.0 oz. crewneck sweater. Model is 5'7" and wearing size L.</p>
+                <p>First run of 100 sweaters comes with a limited edi- tion 2.25" button pin featuring the garment's design.</p>
+            </div>
+        </section>
+    </div>
+
+
     <script src='js/cliente.js'></script>
 </body>
 

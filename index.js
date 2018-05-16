@@ -54,6 +54,21 @@ app.get('/', (req, res) => {
             color: req.query.color
         });
 
+        if(req.query.min & req.query.max) {
+            var {min, max} = req.query;
+            console.log(max)
+    
+            product.filter(
+                function() {
+                    var price = product.precio;
+                    console.log('sdsds'+price);
+                    return price >= minPrice && price <= maxPrice;
+                }
+               );
+        }
+  
+    
+
     product.toArray((err, result) => {
         res.render('index', {
             sweaters: result
@@ -76,8 +91,8 @@ app.get('/sweater/:id', (req, res) => {
         .toArray((err, result) => {
             //res.render(result) //fin res.render
             res.render('sweater_detail', {
-                  prod: result                });
-                  
+                  prod: result                
+                });
            });
 });
 

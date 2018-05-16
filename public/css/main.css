@@ -378,6 +378,31 @@ body#checkoutBody {
   width: 93%;
 }
 
+.product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.product .left {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  width: 45%;
+  background-color: #fafafa !important;
+}
+
+.product .right {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  width: 45%;
+}
+
 @keyframes loading {
   0% {
     width: 0;
