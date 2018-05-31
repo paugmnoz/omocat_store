@@ -55,7 +55,7 @@ d3.json("./us.json", function (error, usmap) {
                 .on("mouseout", handleMouseOut);
 
 
-            d3.select('.catviz').style('transform', 'translate(30%, 30%)')
+            d3.select('.catviz').style('transform', 'translate(30%, 30%)');
             console.log(g);
 
             function handleMouserOver(d, i) {
@@ -66,12 +66,13 @@ d3.json("./us.json", function (error, usmap) {
                     .append("text")
                     .attr("id", "t-" + i)
                     .attr("font-family", "sans-serif")
-                    .attr("font-size", "100px")
-                    .attr("fill", "red")
+                    .attr("font-size", "50px")
+                    .attr("fill", "black")
                     .attr("x", logoCoords[i][0])
                     .attr("y", logoCoords[i][1] - 200)
                     .text("Hello there!");
                 console.log(circle);
+                d3.select('#t-' + i).style('transform', 'translate(30%, 30%)');
             }
 
             function handleMouseOut(d, i) {
@@ -83,7 +84,7 @@ d3.json("./us.json", function (error, usmap) {
                 console.log("t-" + i);
             }
             //    
-
+ 
 
         });
 
