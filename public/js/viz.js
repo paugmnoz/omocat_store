@@ -8,6 +8,13 @@ var svg = d3.select("#viz").append("svg")
     .classed("cat-svg-container", true)
     .attr("width", '100%')
     .attr("height", height);
+
+// 
+var mapsvg = d3.select("body").append("svg")
+    .classed("map-container", true)
+    .attr("width", '100%')
+    .attr("height", height);
+
 /*
 svg.append("rect")
     .attr("class", "background")
@@ -37,7 +44,7 @@ function setRandomCoord(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 //add database for viz
-d3.json("./us.json", function (error, usmap) {
+d3.json("/db/us.json", function (error, usmap) {
     d3.csv("/db/artistsDB.csv", function (error, artists) {
         d3.json('/db/omocat_fill_coordinator.json', function (error, logoCoords) {
             d3.json('/db/wave_coordinator.json', function (error, rectCoords) {
@@ -62,12 +69,12 @@ d3.json("./us.json", function (error, usmap) {
                     .delay(100)
                     .attr("r", (d, i) => getRandomInt(5))
                     .attr("cx", (d, i) => logoCoords[i][0])
-                    .attr("cy", (d, i) => logoCoords[i][1] - 200)
-                    .on("mouseover", handleMouserOver)
-                    .on("mouseout", handleMouseOut);
+                    .attr("cy", (d, i) => logoCoords[i][1] - 200);
+                    
+                    d3.selectAll('circle').on("mouseover", handleMouserOver)
+                    d3.selectAll('circle').on("mouseout", handleMouseOut)
 
 
-                console.log(g);
 
                 function handleMouserOver(d, i) {
                     var circle = d3.select(this);
@@ -94,6 +101,8 @@ d3.json("./us.json", function (error, usmap) {
                     d3.select("#t-" + i).remove();
                     console.log("t-" + i);
                 }
+
+            
                 //    
 
 
