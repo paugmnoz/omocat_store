@@ -16,11 +16,11 @@ svg.append("rect")
 
 //to make groups
 var g = svg.append("g")
-.classed("catviz", true)
+    .classed("catviz", true)
 
 
 //select colors for data viz (dots)
-var colors = d3.scale.category10();
+//var colors = d3.scale.category10();
 
 var projection = d3.geo.albersUsa()
     .scale(1000)
@@ -28,6 +28,10 @@ var projection = d3.geo.albersUsa()
 
 var path = d3.geo.path()
     .projection(projection);
+
+function getRandomInt(max) {
+    return Math.floor(Math.random(3) * Math.floor(max));
+}
 
 //add database for viz
 d3.json("./us.json", function (error, usmap) {
@@ -37,10 +41,19 @@ d3.json("./us.json", function (error, usmap) {
                 .enter().append("circle")
                 .attr("cx", (d, i) => logoCoords[i][0])
                 .attr("cy", (d, i) => logoCoords[i][1] - 200)
-                .attr("r", 2);
-            d3.select('.catviz').style('transform', 'translate(0%, 30%)')
-            console.log(g);
+                .attr("r", (d, i) => getRandomInt(5))
+                .attr("fill", function (d) {
+                    if (d.field === 'ComicBook') {
+                        return "#FF102B";
+                    } else   if (d.field === 'Animation')  {
+                        return "#FFC300";
+                    } else   if (d.field === 'CartoonCharacter')  {
+                        return "#46CDDF";
+                    }
+                })
 
+            d3.select('.catviz').style('transform', 'translate(30%, 30%)')
+            console.log(g);
         });
 
     });
