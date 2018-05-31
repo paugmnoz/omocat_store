@@ -45,15 +45,46 @@ d3.json("./us.json", function (error, usmap) {
                 .attr("fill", function (d) {
                     if (d.field === 'ComicBook') {
                         return "#FF102B";
-                    } else   if (d.field === 'Animation')  {
+                    } else if (d.field === 'Animation') {
                         return "#FFC300";
-                    } else   if (d.field === 'CartoonCharacter')  {
+                    } else if (d.field === 'CartoonCharacter') {
                         return "#46CDDF";
                     }
                 })
+                .on("mouseover", handleMouserOver)
+                .on("mouseout", handleMouseOut);
+
 
             d3.select('.catviz').style('transform', 'translate(30%, 30%)')
             console.log(g);
+
+            function handleMouserOver(d, i) {
+                var circle = d3.select(this);
+
+                // Specify where to put label of text
+                svg
+                    .append("text")
+                    .attr("id", "t-" + i)
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", "100px")
+                    .attr("fill", "red")
+                    .attr("x", logoCoords[i][0])
+                    .attr("y", logoCoords[i][1] - 200)
+                    .text("Hello there!");
+                console.log(circle);
+            }
+
+            function handleMouseOut(d, i) {
+                // Use D3 to select element, change color and size
+
+
+                // Select text by id and then remove
+                d3.select("#t-" + i).remove();
+                console.log("t-" + i);
+            }
+            //    
+
+
         });
 
     });
