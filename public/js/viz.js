@@ -19,13 +19,26 @@ var g = svg.append("g");
 //select colors for data viz (dots)
 var colors = d3.scale.category10();
 
+var projection = d3.geo.albersUsa()
+    .scale(1000)
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
 //add database for viz
-d3.csv("/db/artistsDB.csv", function (error, artists) {
-    d3.json('/db/omocat_fill_coordinator.json', function (error, logoCoords) {
-        g.selectAll("circle").data(artists)
-            .enter().append("circle")
-            .attr("cx", (d, i) => logoCoords[i][0])
-            .attr("cy", (d, i) => logoCoords[i][1] - 200)
-            .attr("r", 2)
+d3.json("./us.json", function (error, usmap) {
+    d3.csv("/db/artistsDB.csv", function (error, artists) {
+        d3.json('/db/omocat_fill_coordinator.json', function (error, logoCoords) {
+            g.selectAll("circle").data(artists)
+                .enter().append("circle")
+                .attr("cx", (d, i) => logoCoords[i][0])
+                .attr("cy", (d, i) => logoCoords[i][1] - 200)
+                .attr("r", 2)
+
+            console.log(g);
+
+        });
+
     });
 });
