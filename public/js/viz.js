@@ -1,11 +1,12 @@
 //width and height define
 var width = 960,
-    height = 500,
+    height = 600,
     active = d3.select(null);
 
 //append svg element to html body with height and width
 var svg = d3.select("#viz").append("svg")
-    .attr("width", width)
+    .classed("cat-svg-container", true)
+    .attr("width", '100%')
     .attr("height", height);
 /*
 svg.append("rect")
@@ -15,6 +16,8 @@ svg.append("rect")
 
 //to make groups
 var g = svg.append("g")
+.classed("catviz", true)
+
 
 //select colors for data viz (dots)
 var colors = d3.scale.category10();
@@ -35,8 +38,7 @@ d3.json("./us.json", function (error, usmap) {
                 .attr("cx", (d, i) => logoCoords[i][0])
                 .attr("cy", (d, i) => logoCoords[i][1] - 200)
                 .attr("r", 2);
-
-                d3.select('g').style('transform', 'translate(50%, 50%)')
+            d3.select('.catviz').style('transform', 'translate(0%, 30%)')
             console.log(g);
 
         });

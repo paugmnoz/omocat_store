@@ -417,6 +417,16 @@ body#checkoutBody {
   height: auto;
 }
 
+#viz {
+  width: 100%;
+  height: 900px;
+}
+
+.cat-svg-container {
+  width: 100%;
+  padding: 0 auto 0 auto;
+}
+
 @keyframes loading {
   0% {
     width: 0;
