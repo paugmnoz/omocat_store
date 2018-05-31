@@ -14,7 +14,7 @@ svg.append("rect")
     .attr("height", height);*/
 
 //to make groups
-var g = svg.append("g");
+var g = svg.append("g")
 
 //select colors for data viz (dots)
 var colors = d3.scale.category10();
@@ -34,8 +34,9 @@ d3.json("./us.json", function (error, usmap) {
                 .enter().append("circle")
                 .attr("cx", (d, i) => logoCoords[i][0])
                 .attr("cy", (d, i) => logoCoords[i][1] - 200)
-                .attr("r", 2)
+                .attr("r", 2);
 
+                d3.select('g').style('transform', 'translate(50%, 50%)')
             console.log(g);
 
         });
