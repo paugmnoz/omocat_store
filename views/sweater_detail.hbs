@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-    
-    {{#each prod}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {{#each prod}}
 
     <title>{{nombre}}</title>
     {{/each}}
@@ -116,7 +114,7 @@
             width: 95%;
             margin: 0px auto;
             padding-top: 120px;
-         
+
         }
 
         .product {
@@ -148,7 +146,7 @@
         }
     </style>
 
-        <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
 </head>
 
@@ -172,35 +170,41 @@
         <section class="product">
 
             {{#each prod}}
-            <div class="left"  data-id="{{this._id}}">
-                              
+            <div class="left" data-id="{{this._id}}">
+
                 <p>{{artista}}</p>
                 <br/>
                 <br/>
                 <h1>{{nombre}}</h1>
-                                <br/>
+                <br/>
                 <br/>
 
-                <p><strong>PRICE</strong>                 <br/>                <br/>
+                <p>
+                    <strong>PRICE</strong>
+                    <br/>
+                    <br/> ${{precio}}.00
 
-${{precio}}.00</p>                <br/>
+                </p>
+                <br/>
                 <br/>
 
-                <button class="mainBtn add">Add to Cart</button>                <br/>
+                <button class="mainBtn add">Add to Cart</button>
+                <br/>
 
                 <br/>
                 <br/>
 
                 <h4>About the artist</h4>
-                                <br/>
-           
+                <br/>
+
 
                 <div class="artistDiv">
                     <div class="imgArt">
                         <img src="" alt="">
                     </div>
                     <div class="text">
-                        <p>Drawings, comics & ceramics. Lives & works in Toronto</p>                <br/>
+                        <p>Drawings, comics & ceramics. Lives & works in Toronto</p>
+                        <br/>
 
                         <a>[Twitter]</a>
                         <a href="">[Instagram]</a>
@@ -208,12 +212,12 @@ ${{precio}}.00</p>                <br/>
                 </div>
             </div>
             <div class="right">
-                  <img src="/{{img_principal}}" alt="">
+                <img src="/{{img_principal}}" alt="">
             </div>
         </section>
         <section class="product">
             <div class="left">
-                  <img src="/{{img_temp}}" alt="">
+                <img src="/{{img_temp}}" alt="">
             </div>
             <div class="right">
                 <h2>Details</h2>
@@ -222,8 +226,8 @@ ${{precio}}.00</p>                <br/>
                 <p>First run of 100 sweaters comes with a limited edi- tion 2.25" button pin featuring the garment's design.</p>
             </div>
         </section>
-                    {{/each}}
-        
+        {{/each}}
+
     </div>
 
 

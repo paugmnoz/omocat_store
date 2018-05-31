@@ -10,7 +10,6 @@ fetch('http://localhost:1889/productosPorIds?ids=' + arreglo)
     })
     .then(function (res) {
 //        console.log(res);
-
         var lista = document.querySelector('.lista');
         var subtotal= document.querySelector('.subtotal');
         var total = document.querySelector('.total');

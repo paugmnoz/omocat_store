@@ -101,6 +101,12 @@ app.get('/sweater/:id', (req, res) => {
            });
 });
 
+app.get('/viz', (req, res) => {
+
+            res.render('viz', {
+                });
+        
+});
 
 app.get('/productosPorIds', (req, res) => {
     console.log('asdas' + req.query.ids);
