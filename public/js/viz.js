@@ -111,7 +111,7 @@ d3.json("/db/us.json", function (error, usmap) {
                     console.log("t-" + i);
                 }
 
-
+                
                 /// MAP VISUALIZATION
                 d3.select('.mapviz').style('transform', 'translate(20%, 0%)');
 
@@ -132,19 +132,24 @@ d3.json("/db/us.json", function (error, usmap) {
                 gmap.selectAll(".map-circles").data(artists)
                     .enter().append("circle")
                     .classed("map-circles", true)
-
+                    .attr("cx", (d, i) => rectCoords[i][0])
+                    .attr("cy", (d, i) => rectCoords[i][1] - 200)
+                    .attr("fill", "#46CDDF")
+                    .transition()
+                    .duration(2000)
+                    .delay(3000)
                     .attr("cx", d => projection([d.lon, d.lat]) ? projection([d.lon, d.lat])[0] : -1000)
                     .attr("cy", d => projection([d.lon, d.lat]) ? projection([d.lon, d.lat])[1] : -8000)
                    .attr("r", 3)
-                    .attr("fill", function (d) {
-                        if (d.field === 'ComicBook') {
-                            return "#FF102B";
-                        } else if (d.field === 'Animation') {
-                            return "#FFC300";
-                        } else if (d.field === 'CartoonCharacter') {
-                            return "#46CDDF";
-                        }
-                    })
+                   .attr("fill", function (d) {
+                    if (d.field === 'ComicBook') {
+                        return "#FF102B";
+                    } else if (d.field === 'Animation') {
+                        return "#FFC300";
+                    } else if (d.field === 'CartoonCharacter') {
+                        return "#46CDDF";
+                    }
+                })
 
                     
                 d3.selectAll('.map-circles').on("mouseover", handleMouserOver)
