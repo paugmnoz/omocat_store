@@ -220,6 +220,7 @@ d3.json("/db/us.json", function (error, usmap) {
                     //Show the tooltip
                     d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(280%, 280%)');
 
+                    //trigger sound
                     snd.play();
 
                 }
