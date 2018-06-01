@@ -53,10 +53,10 @@ var gmap = mapsvg.append("g")
 var gvisit = visitsvg.append("g")
     .classed("visitviz", true)
 
-var comic_btn =     d3.select('#comicBook');
-var animation_btn =     d3.select('#Animation');
-var cartoon_btn =     d3.select('#CartoonCharacter');
-var all_btn =     d3.select('#all').classed("selected", true);
+var comic_btn = d3.select('#comicBook');
+var animation_btn = d3.select('#Animation');
+var cartoon_btn = d3.select('#CartoonCharacter');
+var all_btn = d3.select('#all').classed("selected", true);
 
 //select colors for data viz (dots)
 //var colors = d3.scale.category10();
@@ -103,12 +103,12 @@ d3.json("/db/us.json", function (error, usmap) {
                     .attr("cx", (d, i) => logoCoords[i][0])
                     .attr("cy", (d, i) => logoCoords[i][1] - 200);
 
-                    comic_btn.on('click', function() {
-                        comic_btn.classed("selected", true)
-                        animation_btn.classed("selected", false)
-                        cartoon_btn.classed("selected", false)
-                        all_btn.classed("selected", false)
-                        d3.selectAll('.cat-circles')
+                comic_btn.on('click', function () {
+                    comic_btn.classed("selected", true)
+                    animation_btn.classed("selected", false)
+                    cartoon_btn.classed("selected", false)
+                    all_btn.classed("selected", false)
+                    d3.selectAll('.cat-circles')
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -121,14 +121,14 @@ d3.json("/db/us.json", function (error, usmap) {
                                 return "#f2efef";
                             }
                         })
-                    });
+                });
 
-                    animation_btn.on('click', function() {
-                        comic_btn.classed("selected", false)
-                        animation_btn.classed("selected", true)
-                        cartoon_btn.classed("selected", false)
-                        all_btn.classed("selected", false)
-                        d3.selectAll('.cat-circles')
+                animation_btn.on('click', function () {
+                    comic_btn.classed("selected", false)
+                    animation_btn.classed("selected", true)
+                    cartoon_btn.classed("selected", false)
+                    all_btn.classed("selected", false)
+                    d3.selectAll('.cat-circles')
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -141,14 +141,14 @@ d3.json("/db/us.json", function (error, usmap) {
                                 return "#f2efef";
                             }
                         })
-                    });
+                });
 
-                    cartoon_btn.on('click', function() {
-                        comic_btn.classed("selected", false)
-                        animation_btn.classed("selected", false)
-                        cartoon_btn.classed("selected", true)
-                        all_btn.classed("selected", false)
-                        d3.selectAll('.cat-circles')
+                cartoon_btn.on('click', function () {
+                    comic_btn.classed("selected", false)
+                    animation_btn.classed("selected", false)
+                    cartoon_btn.classed("selected", true)
+                    all_btn.classed("selected", false)
+                    d3.selectAll('.cat-circles')
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -161,14 +161,14 @@ d3.json("/db/us.json", function (error, usmap) {
                                 return "#46CDDF";
                             }
                         })
-                    });
+                });
 
-                    all_btn.on('click', function() {
-                        comic_btn.classed("selected", false)
-                        animation_btn.classed("selected", false)
-                        cartoon_btn.classed("selected", false)
-                        all_btn.classed("selected", true)
-                        d3.selectAll('.cat-circles')
+                all_btn.on('click', function () {
+                    comic_btn.classed("selected", false)
+                    animation_btn.classed("selected", false)
+                    cartoon_btn.classed("selected", false)
+                    all_btn.classed("selected", true)
+                    d3.selectAll('.cat-circles')
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -181,7 +181,7 @@ d3.json("/db/us.json", function (error, usmap) {
                                 return "#46CDDF";
                             }
                         })
-                    });
+                });
                 d3.selectAll('.cat-circles').on("mouseover", handleMouserOver)
                 d3.selectAll('.cat-circles').on("mouseout", handleMouseOut)
 
@@ -200,12 +200,13 @@ d3.json("/db/us.json", function (error, usmap) {
                         .style("top", logoCoords[i][1] - 200 + "px")
                         .select("#value")
                         .text(d.name);
-                        
+
                     d3.select("#value2")
                         .text(d.field);
                     d3.select(".colorheader")
                         .style(
-                            "background-color", function () {
+                            "background-color",
+                            function () {
                                 if (d.field === 'ComicBook') {
                                     console.log('helloooooo');
                                     return "#FF102B";
@@ -220,29 +221,31 @@ d3.json("/db/us.json", function (error, usmap) {
                     //Show the tooltip
                     d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(280%, 280%)');
 
-                    //trigger sound
-                    snd.play();
+                   //trigger sound
+                   snd.play();
 
                 }
 
                 function handleMouserOverMap(d, i) {
+
                     d3.select(this).attr({
                         r: (d, i) => setRandomCoord(25, 45)
                     });
 
-               
+
                     //Update the tooltip position and value
                     d3.select("#tooltip")
-                        .style("left", projection([d.lon, d.lat])[0]  + "px")
-                        .style("top",  projection([d.lon, d.lat])[1]  + "px")
+                        .style("left", projection([d.lon, d.lat])[0] + "px")
+                        .style("top", projection([d.lon, d.lat])[1] + "px")
                         .select("#value")
                         .text(d.name);
-                        
+
                     d3.select("#value2")
                         .text(d.city);
                     d3.select(".colorheader")
                         .style(
-                            "background-color", function () {
+                            "background-color",
+                            function () {
                                 if (d.field === 'ComicBook') {
                                     console.log('helloooooo');
                                     return "#FF102B";
@@ -257,8 +260,8 @@ d3.json("/db/us.json", function (error, usmap) {
                     //Show the tooltip
                     d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(220%, 950%)');
 
-                        //trigger sound
-                        snd.play();
+                    //trigger sound
+                   snd.play();
 
                 }
 
