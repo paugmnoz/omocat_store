@@ -462,6 +462,30 @@ body#checkoutBody {
   order: 0;
 }
 
+.title {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.feature {
+  fill: #eee;
+  cursor: pointer;
+}
+
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 @keyframes loading {
   0% {
     width: 0;
