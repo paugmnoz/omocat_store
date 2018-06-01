@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$font: 'Work Sans',sans-serif;
+$loadingTime: 2s;
+a {
+    text-decoration: none;
+    font-family: $font;
+    transition: all 0.2s;
+}
+
+.promo {
+        width: 40%;
+        position: absolute;
+        margin:  40% 0 0 30%;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        z-index: 999;
+    
+}
+  //--------------SECCION DE INICIO ---------------
+  .welcome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%; // background-color: aqua;
+    .leftImgs {
+        width: 30%;
+        height: auto;
+        margin-top: 8em;
+        margin-bottom: 6.5em;
+        float: left;
+        img {
+            width: 100%;
+        }
+    }
+    .seasonQuote {
+        margin: 10em auto 0 10%;
+        z-index: 5;
+        h1 {
+            font-family: $font;
+            font-size: 40pt;
+            font-weight: 900;
+            &.second {
+                margin-left: 1em;
+            }
+            &.third {
+                margin-left: 6em;
+            }
+        }
+    }
+    .rightImgs {
+        float: right;
+        width: 37%;
+        height: auto;
+        margin-top: -4em;
+        margin-right: 120px;
+        z-index: 100;
+        img {
+            width: 100%;
+        }
+    }
+}
+.bottomNav {
+    position: absolute;
+    padding-left: 5%;
+    margin-top: -2em;
+    a {
+        color: black;
+        font-variant: small-caps;
+        &.bottommenuOptions {
+            font-weight: 700;
+            font-size: 21;
+            margin-right: 2em;
+            transition: 1s;
+            align-items: center;
+        }
+        &.bottommenuOptions:hover {
+            color: #ff4746;
+        }
+    }
+} //------------------------SECCIÓN EQUIPO --------------
+.theTeam {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .teamPhoto {
+        background-color: #ff4746;
+        height: 400px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        .weAre {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto; // background: #fbeb00;
+            h1 {
+                font-family: $font;
+                font-size: 30;
+                font-weight: 900;
+                color: white;
+                &.second {
+                    margin-left: 1em;
+                }
+            }
+        }
+        .teamImgDiv {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto; //background: #fbeb00;
+            width: 60%;
+            img {
+                order: 0;
+                flex: 0 1 auto;
+                align-self: auto;
+                margin: auto;
+                width: 100%;
+            }
+        }
+    }
+    .descriptionTeam {
+        width: 50%;
+        padding: 5em 0 0 2em;
+        h1 {
+            font-family: $font;
+            font-size: 30;
+            font-weight: 900;
+            margin-bottom: 1em;
+            color: black;
+        }
+        .description {
+            width: 60%;
+            p {
+                font-family: $font;
+                font-weight: 200;
+                font-size: 16;
+                margin-bottom: 1em;
+            }
+            p:last-child {
+                margin-bottom: 3em;
+            }
+        }
+        .rect {
+            width: 50px;
+            height: 10px;
+            background-color: #ff4746;
+        }
+    } //--------------------SERVICES-----------------
+}
+.titleSectionServ {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2em;
+    margin-top: 3em;
+    h1 {
+        font-family: $font;
+        font-size: 30;
+        font-weight: 900;
+        color: black;
+    }
+}
+.services {
+    width: 80%;
+    margin: auto;
+    height: 600px; // background-color: rgb(134, 114, 250);
+    .servDiv {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: space-around;
+        align-items: flex-start;
+        .service {
+            width: 30%;
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+            h2 {
+                font-family: $font;
+                font-size: 22;
+                font-weight: 800;
+                font-variant: small-caps;
+                color: black;
+            }
+            .rect {
+                width: 100px;
+                height: 10px;
+                background-color: #ff4746;
+            }
+            .frontFace {
+                width: 20%;
+                margin-top: 3em;
+                position: absolute;
+                transform: perspective( 0) rotateY( 0deg);
+                backface-visibility: hidden;
+                transition: transform .5s linear 0s;
+                img {
+                    width: 100%;
+                }
+            }
+            .frontFace:hover {
+                transform: perspective( 0) rotateY( -180deg);
+            }
+            .backFace {
+                position: absolute;
+                transform: perspective( 0) rotateY( 180deg);
+                backface-visibility: hidden;
+                transition: transform .5s linear 0s;
+                background-color: #ff4746;
+                h2 {
+                    font-family: $font;
+                    font-size: 22;
+                    font-weight: 800;
+                    font-variant: small-caps;
+                    color: black;
+                }
+                p {
+                    font-family: $font;
+                    color: white;
+                }
+            }
+            .backFace:hover {
+                transform: perspective( 0) rotateY( 0deg);
+            }
+        }
+    }
+} //--------------------GALLERY-----------------
+.bestsellersGallery {
+    width: 100%;
+    background-color: #2bb8c0;
+    h1 {
+        font-family: $font;
+        font-size: 30;
+        font-weight: 900;
+        color: white;
+        padding: 1em;
+        float: right;
+    }
+    .gallery {
+        width: 100%;
+        height: auto;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .btnControl {
+            display: block;
+            position: absolute;
+            margin-top: -30%;
+            width: 100%;
+            .btn {
+                padding: 1em;
+                color: white;
+                background-color: #2bb8c0;
+                border: none;
+                &.btndisplayLeft {}
+                &.btndisplayRight {
+                    float: right;
+                }
+            }
+        }
+    }
+} //--------------------SPECICIFICATIONS-----------------
+.specifications {
+    width: 100%;
+    height: 500px; //background-color: rgb(214, 250, 114);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    .spechItem {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+    }
+    h1 {
+        font-family: $font;
+        font-size: 30;
+        font-weight: 900;
+        color: black;
+    }
+    .stuffDetails {
+        width: 50%;
+        padding: 8em 2em 2em 5%;
+        h1 {
+            margin-bottom: 1em;
+        }
+        p {
+            font-family: $font;
+            font-weight: 400;
+            font-size: 16;
+            margin-bottom: 1em;
+        }
+    }
+    .product {
+        width: 50%;
+        height: 500px;
+        background-color: #fbeb00;
+        display: flex;
+        justify-content: center;
+        img {
+            height: 100%;
+        }
+    }
+} //--------------------FOOTER-----------------
+.footer {
+    width: 100%;
+    .artist {
+        width: 12%;
+        border-radius: 50%;
+        position: absolute;
+        margin-left: 2%;
+        margin-top: -480px;
+    }
+    .realFooter {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        margin-top: 100px;
+        .aboutlinks {
+            width: 65%;
+            height: 400px;
+            background-color: #f3a5b2;
+            animation: loading $loadingTime linear ;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-content: stretch;
+            align-items: flex-end;
+            .links {
+                order: 0;
+                flex: 0 1 auto;
+                align-self: auto;
+                margin-top: 30%;
+                padding-right: 10%;
+                h3 {
+                    font-family: $font;
+                    font-weight: 800;
+                    color: white;
+                }
+                .ul {
+                    list-style: none;
+                    color: white;
+                    li:last-child {
+                        margin-bottom: 1em;
+                    }
+                    &.social {
+                        &.about {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            .iconFooter {
+                order: 0;
+                flex: 0 1 auto;
+                align-self: auto;
+                padding-right: 10.5%;
+                img {
+                    width: 60%;
+                }
+            }
+        }
+        .newsletter {
+            width: 35%;
+            display: block;
+            position: absolute;
+            margin-left: 70%;
+            p {
+                font-family: $font;
+                font-weight: 700;
+                font-size: 21;
+                margin-bottom: 0.7em;
+            }
+            input {
+                display: block;
+                padding: 5px 2px 1px 2px;
+                border: none;
+                border-bottom: 2px solid black;
+                font-family: $font;
+                font-weight: 400;
+                font-size: 16;
+                margin-bottom: 1em;
+            }
+            button {
+                padding: 7px 15px 7px 10px;
+                border: none;
+                background-color: black;
+                color: white;
+                font-family: $font;
+                font-weight: 600;
+                font-size: 16;
+                transition: all 0.2s;
+            }
+
+            button:hover {
+                background-color:#ff4746;
+                
+            }
+        }
+    }
+}

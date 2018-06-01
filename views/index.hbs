@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
@@ -14,13 +15,14 @@
 
 <body>
 
-    <nav class="globalNav">
+    <nav class="globalNav reveal">
         <img class="icon" src="img/brand/icon.png" alt="">
-        <a href="/" class="typoLogo">Omocat</a>
-        <a href="#" class="menuOptions">clothing</a>
+        <a href="/home" class="typoLogo">Omocat</a>
+        <a href="/store" class="menuOptions">store</a>
         <a href="#" class="menuOptions">artwork</a>
         <a href="#" class="menuOptions">us</a>
         <a href="#" class="menuOptions">contact</a>
+        <a href="/" class="menuOptions">Viz</a>
         <div class="filler"></div>
         <a href="checkout">
 
@@ -36,75 +38,196 @@
 
     </nav>
 
+    
+        <section class="welcome">
+            <div class="leftImgs">
+                <img src="resources/welcome/a1.png" alt="">
+            </div>
+            <div class="seasonQuote">
+                <h1>NEW</h1>
+                <h1 class="second">COLLECTION</h1>
+                <h1 class="third">2018</h1>
+            </div>
 
-    <section class="container">
+            <div class="rightImgs">
+                <img src="resources/welcome/b1.png" alt="">
+            </div>
 
-        <section class="filters">
-            <div class="left">
-                <h1 class="title shadow">CLOTHING</h1>
-                <h1 class="title overshadow">SWEATERS</h1>
-                <h2>FILTER BY</h2>
+
+        </section>
+        <nav class="bottomNav">
+            <a href="#" class="bottommenuOptions">clothing</a>
+            <a href="#" class="bottommenuOptions">artwork</a>
+            <a href="#" class="bottommenuOptions">us</a>
+        </nav>
+        <section class="theTeam">
+            <div class="responsive teamPhoto">
+                <div class="weAre">
+                    <h1>WE</h1>
+                    <h1 class="second">ARE...</h1>
+                </div>
+                <div class="teamImgDiv">
+                    <img src="resources/team/team.png" alt="">
+                </div>
+            </div>
+            <div class="responsive descriptionTeam">
+                <h1>A HARDWORKING TEAM</h1>
+                <div class="description">
+                    <p>OMOCAT is an artist-owned creative company that specializes in original apparel and merchandise.</p>
+                    <p>Initially a solo project, OMOCAT is now made up of a small, hardworking team of homebodies based in the
+                        U.S. and Canada. We do our best to make quality merchandise with love and integrity, and we hope
+                        to help people make friends and inspire others to follow their dreams.</p>
+
+                </div>
+
                 <div class="rect"></div>
-                <h3>ARTIST</h3>
-                <a href="/?artista=OMOCAT#results" class="filterClick">OMOCAT</a>
-                <a href="/?artista=HIZGI#results">Hizgi</a>
-                <a href="/?artista=CHU NAP#results">CHU NAP</a>
-                <a href="/?artista=CHOO#results">CHOO</a>
-                <a href="/#results">All</a>
 
-                <h3>COLOR</h3>
-                <a href="/?color=yellow#results">Yellow</a>
-                <a href="/?color=black#results">Black</a>
-                <a href="/?color=blue#results">Blue</a>
-                <a href="/?color=green#results">Green</a>
-                <a href="/">All</a>
-
-                <h3>PRICE</h3>
-                <a>Min.  30 <input type="range" name="" id="slider" min="30" max="60"> 60 </a>     
-                <br/>
-                <br/>
-                <a class="displayBlock">Max.  30 <input type="range" name="" id="sliderMax" min="30" max="60"> 60 </a>    
-                                <br/>
-                <br/>
-
-
-                <a href="/#results" class="clear_filter displayBlock">Clear</a>
-                                <br/>
-
-    <button class="minMax mainBtn">Search by Price</button>
-
-
-            </div>
-            <div class="right">
-                <img src="img/clothing_sweater_models.jpg" class="img_models" alt="">
             </div>
         </section>
 
-        <section id="results">
-            <h2>RESULTS</h2>
-        </section>
-        <section class="prod_results">
-            {{#each sweaters}}
-            <div class="sweater" data-id="{{this._id}}">
-                <a href="/sweater/{{uri_name}}">
+        <div class="titleSectionServ">
+            <h1>FOR YOU WE HAVE . . .</h1>
+        </div>
 
-                    <img class="productImg principal" src="{{img_principal}}" alt="">
-                    <h5>{{nombre}}</h5>
-                    <p>{{artista}}</p>
-                    <p>${{precio}}.00</p>
-                </a>
-                <button class="add mainBtn">Add</button>
+
+        <section class="services">
+            <div class="servDiv">
+                <div class="service">
+                    <br/>
+                        <h2>CLOTHING</h2>
+                        <div class="rect"></div>
+                    <div>
+
+                        <div class="frontFace">
+                            <img src="resources/stuff/services_a_1.jpg" alt="">
+                        </div>
+                        <div class="backFace">
+                            <h2>CLOTHING</h2>
+                            <p>Finde the best and uniques shirts, sweateres and hasdfasdfasd</p>
+                            <div class="rect"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="service">
+                        <h2>NICE</h2>
+                        <h2>PRINTED STUFF</h2>
+                        <div class="rect"></div>
+                        <div>
+                                <div class="frontFace">
+                                        <img src="resources/stuff/services_b_1.jpg" alt="">
+                                    </div>
+                                    <div class="backFace">
+                                            <img src="resources/stuff/services_b_2.jpg" alt="">                       
+                                    </div>
+                                    
+                
+                        </div>
+                  
+                </div>
+
+                <div class="service">
+                       <br/>
+                        <h2>ACCESORIES</h2>
+                        <div class="rect"></div>
+
+                        <div>
+                            <div class="frontFace">
+                                <img src="resources/stuff/services_c_1.jpg" alt="">
+                            </div>
+                            <div class="backFace">
+                                    <h2>ACCESORIES</h2>
+                                    <p>Finde the best and uniques shirts, sweateres and hasdfasdfasd</p>
+                                <div class="rect"></div>
+                            </div>
+                        </div>
+
+                        
+    
+              
+            </div>
+
+        </section>
+        <section class="bestsellersGallery">
+            <h1>BEST SELLERS . . .</h1>
+            <div class="gallery">
+                <img class="slide" src="resources/gallery/slide1.png">
+                <img class="slide" src="resources/gallery/slide2.png">
+                <div class="btnControl">
+                    <button class="btn btndisplayLeft" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="btn btndisplayRight" onclick="plusDivs(1)">&#10095;</button>
+
+                </div>
 
             </div>
-            {{/each}}
         </section>
 
-    </section>
+        <section class="specifications">
+            <div class="stuffDetails spechItem">
+                <h1>SPECIFICATIONS</h1>
+                <p>Original design by the team or another artists </p>
+                <p>UNISEX</p>
+                <p>100 % cotton</p>
+                <p>Wash cold inside-out</p>
+                <p>Dry low or hang dry</p>
+            </div>
+            <div class="product spechItem">
+                <img src="resources/specifications/shirt.jpg" alt="">
 
 
-    <script src='js/cliente.js'></script>
-    <script src='js/productos.js'></script>
-    <script src='js/script.js'></script>
+            </div>
+        </section>
+
+        <footer class="footer">
+
+            <div class="realFooter">
+                <div class="aboutlinks">
+                    <div class="links">
+                        <h3>info</h3>
+                        <ul class="ul about">
+                            <li>
+                                <a>About OMOCAT</a>
+                            </li>
+                            <li>
+                                <a>Contact us</a>
+                            </li>
+                            <li>
+                                <a>FAQ</a>
+                            </li>
+                        </ul>
+                        <h3>Social media</h3>
+                        <ul class="ul social about ">
+                            <li>
+                                <a>Fb</a>
+                            </li>
+                            <li>
+                                <a>Twt</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="iconFooter">
+                        <img class="icon" src="resources/grayIcon.png" alt="">
+
+                    </div>
+
+                </div>
+
+                <div class="newsletter">
+                    <p>Newsletter</p>
+                    <input type="email" name="" id="" placeholder="anytime@all.com">
+                    <button>JOIN US</button>
+                </div>
+            </div>
+            <img src="resources/artists/art1.jpg" alt="" class="artist">
+
+
+        </footer>
+
+    <script src='js/home.js'></script>
 
 </body>
 

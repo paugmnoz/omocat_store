@@ -1,5 +1,10 @@
 window.sr = ScrollReveal();
 
+
+sr.reveal('.reveal', {
+    duration: 2000
+});
+
 //width and height define
 var width = 960,
     height = 600,
@@ -254,8 +259,4 @@ d3.csv("/db/artistsDB850.csv", function (error, artists850) {
             .delay(3000)
 
     });
-});
-
-sr.reveal('.reveal', {
-    duration: 2000
 });

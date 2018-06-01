@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <nav class="globalNav">
+        <img class="icon" src="/img/brand/icon.png" alt="">
+        <a href="/home" class="typoLogo">Omocat</a>
+        <a href="/store" class="menuOptions">store</a>
+        <a href="#" class="menuOptions">artwork</a>
+        <a href="#" class="menuOptions">us</a>
+        <a href="#" class="menuOptions">contact</a>
+                <a href="/" class="menuOptions">Viz</a>
+
+        <div class="filler"></div>
+        <a href="checkout">
+
+            <div class="carritoview">
+                <img src="/img/cart.svg" alt="">
+            </div>
+
+            <div class="carrito">
+                0
+            </div>
+
+        </a>
+
+    </nav>
+
+
+    <section class="container">
+
+        <section class="filters">
+            <div class="left">
+                <h1 class="title shadow">CLOTHING</h1>
+                <h1 class="title overshadow">SWEATERS</h1>
+                <h2>FILTER BY</h2>
+                <div class="rect"></div>
+                <h3>ARTIST</h3>
+                <a href="/?artista=OMOCAT#results" class="filterClick">OMOCAT</a>
+                <a href="/?artista=HIZGI#results">Hizgi</a>
+                <a href="/?artista=CHU NAP#results">CHU NAP</a>
+                <a href="/?artista=CHOO#results">CHOO</a>
+                <a href="/#results">All</a>
+
+                <h3>COLOR</h3>
+                <a href="/?color=yellow#results">Yellow</a>
+                <a href="/?color=black#results">Black</a>
+                <a href="/?color=blue#results">Blue</a>
+                <a href="/?color=green#results">Green</a>
+                <a href="/">All</a>
+
+                <h3>PRICE</h3>
+                <a>Min.  30 <input type="range" name="" id="slider" min="30" max="60"> 60 </a>     
+                <br/>
+                <br/>
+                <a class="displayBlock">Max.  30 <input type="range" name="" id="sliderMax" min="30" max="60"> 60 </a>    
+                                <br/>
+                <br/>
+
+
+                <a href="/#results" class="clear_filter displayBlock">Clear</a>
+                                <br/>
+
+    <button class="minMax mainBtn">Search by Price</button>
+
+
+            </div>
+            <div class="right">
+                <img src="/img/clothing_sweater_models.jpg" class="img_models" alt="">
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>RESULTS</h2>
+        </section>
+        <section class="prod_results">
+            {{#each sweaters}}
+            <div class="sweater" data-id="{{this._id}}">
+                <a href="/sweater/{{uri_name}}">
+
+                    <img class="productImg principal" src="/{{img_principal}}" alt="">
+                    <h5>{{nombre}}</h5>
+                    <p>{{artista}}</p>
+                    <p>${{precio}}.00</p>
+                </a>
+                <button class="add mainBtn">Add</button>
+
+            </div>
+            {{/each}}
+        </section>
+
+    </section>
+
+
+    <script src='js/cliente.js'></script>
+    <script src='js/productos.js'></script>
+    <script src='js/script.js'></script>
+
+</body>
+
+</html>

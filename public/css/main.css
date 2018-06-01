@@ -488,7 +488,7 @@ body#checkoutBody {
   }
 }
 
-.title {
+.viztitle {
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -496,7 +496,7 @@ body#checkoutBody {
   padding: 1em 0 1em 0;
 }
 
-.mapsection .title {
+.mapsection .viztitle {
   align-content: center;
   justify-content: center;
   align-items: center;
