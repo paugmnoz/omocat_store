@@ -487,4 +487,28 @@ body#checkoutBody {
     width: 65%;
   }
 }
+
+.title {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.feature {
+  fill: #eee;
+  cursor: pointer;
+}
+
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 /*# sourceMappingURL=main.css.map */
