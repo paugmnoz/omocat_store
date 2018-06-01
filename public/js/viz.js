@@ -74,6 +74,57 @@ function setRandomCoord(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+
+function playSound(file, speed = 1, pitchShift = 1, loop = false, autoplay = true) {
+
+    if (pitchShift) {
+
+        audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+        source = audioCtx.createBufferSource();
+        request = new XMLHttpRequest();
+
+        request.open('GET', file, true);
+
+        request.responseType = 'arraybuffer';
+
+
+        request.onload = function () {
+            var audioData = request.response;
+
+            audioCtx.decodeAudioData(audioData, function (buffer) {
+                    myBuffer = buffer;
+                    songLength = buffer.duration;
+                    source.buffer = myBuffer;
+                    source.playbackRate.value = speed;
+                    source.connect(audioCtx.destination);
+                    source.loop = loop;
+                },
+
+                function (e) {
+                    "Error with decoding audio data" + e.error
+                });
+
+        }
+
+        request.send();
+        source.play = source.start
+    } else {
+        source = new Audio(file)
+        source.playbackRate = speed
+        source.loop = loop
+    }
+    if (autoplay) {
+        source.play()
+    }
+    return source
+}
+
+var source
+
+function play(p) {
+    source = playSound('sound/pop2.mp3', pitch = p);
+}
+
 //add database for viz
 d3.json("/db/us.json", function (error, usmap) {
     d3.csv("/db/artistsDB.csv", function (error, artists) {
@@ -84,6 +135,7 @@ d3.json("/db/us.json", function (error, usmap) {
                 g.selectAll(".cat-circles").data(artists)
                     .enter().append("circle")
                     .classed("cat-circles", true)
+                    .classed("cat-highlighted", true)
                     .attr("cx", (d, i) => rectCoords[i][0])
                     .attr("cy", (d, i) => rectCoords[i][1] - 200)
                     .attr("r", 1)
@@ -109,6 +161,15 @@ d3.json("/db/us.json", function (error, usmap) {
                     cartoon_btn.classed("selected", false)
                     all_btn.classed("selected", false)
                     d3.selectAll('.cat-circles')
+                    .classed("cat-highlighted", function (d) {
+                        if (d.field === 'ComicBook') {
+                            return true;
+                        } else if (d.field === 'Animation') {
+                            return false;
+                        } else if (d.field === 'CartoonCharacter') {
+                            return false;
+                        }
+                    })
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -129,6 +190,15 @@ d3.json("/db/us.json", function (error, usmap) {
                     cartoon_btn.classed("selected", false)
                     all_btn.classed("selected", false)
                     d3.selectAll('.cat-circles')
+                    .classed("cat-highlighted", function (d) {
+                        if (d.field === 'ComicBook') {
+                            return false;
+                        } else if (d.field === 'Animation') {
+                            return true;
+                        } else if (d.field === 'CartoonCharacter') {
+                            return false;
+                        }
+                    })
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -149,6 +219,15 @@ d3.json("/db/us.json", function (error, usmap) {
                     cartoon_btn.classed("selected", true)
                     all_btn.classed("selected", false)
                     d3.selectAll('.cat-circles')
+                    .classed("cat-highlighted", function (d) {
+                        if (d.field === 'ComicBook') {
+                            return false;
+                        } else if (d.field === 'Animation') {
+                            return false;
+                        } else if (d.field === 'CartoonCharacter') {
+                            return true;
+                        }
+                    })
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -169,6 +248,15 @@ d3.json("/db/us.json", function (error, usmap) {
                     cartoon_btn.classed("selected", false)
                     all_btn.classed("selected", true)
                     d3.selectAll('.cat-circles')
+                    .classed("cat-highlighted", function (d) {
+                        if (d.field === 'ComicBook') {
+                            return true;
+                        } else if (d.field === 'Animation') {
+                            return true;
+                        } else if (d.field === 'CartoonCharacter') {
+                            return true;
+                        }
+                    })
                         .transition()
                         .duration(500)
                         .delay(500)
@@ -182,47 +270,52 @@ d3.json("/db/us.json", function (error, usmap) {
                             }
                         })
                 });
-                d3.selectAll('.cat-circles').on("mouseover", handleMouserOver)
-                d3.selectAll('.cat-circles').on("mouseout", handleMouseOut)
+                d3.selectAll('.cat-highlighted').on("mouseover", handleMouserOver)
+                d3.selectAll('.cat-highlighted').on("mouseout", handleMouseOut)
 
                 d3.selectAll('circle').on("mouseover", handleMouserOver)
                 d3.selectAll('circle').on("mouseout", handleMouseOut)
 
 
                 function handleMouserOver(d, i) {
-                    d3.select(this).attr({
-                        r: (d, i) => setRandomCoord(25, 45)
-                    });
+                    console.log(d3.select(this).classed('cat-highlighted'));
 
-                    //Update the tooltip position and value
-                    d3.select("#tooltip")
-                        .style("left", logoCoords[i][0] + "px")
-                        .style("top", logoCoords[i][1] - 200 + "px")
-                        .select("#value")
-                        .text(d.name);
+                    if(d3.select(this).classed('cat-highlighted')===true){
 
-                    d3.select("#value2")
-                        .text(d.field);
-                    d3.select(".colorheader")
-                        .style(
-                            "background-color",
-                            function () {
-                                if (d.field === 'ComicBook') {
-                                    console.log('helloooooo');
-                                    return "#FF102B";
-                                } else if (d.field === 'Animation') {
-                                    return "#FFC300";
-                                } else if (d.field === 'CartoonCharacter') {
-                                    return "#46CDDF";
+                        d3.select(this).attr({
+                            r: (d, i) => setRandomCoord(25, 45)
+                        });
+    
+                        //Update the tooltip position and value
+                        d3.select("#tooltip")
+                            .style("left", logoCoords[i][0] + "px")
+                            .style("top", logoCoords[i][1] - 200 + "px")
+                            .select("#value")
+                            .text(d.name);
+    
+                        d3.select("#value2")
+                            .text(d.field);
+                        d3.select(".colorheader")
+                            .style(
+                                "background-color",
+                                function () {
+                                    if (d.field === 'ComicBook') {
+                                        console.log('helloooooo');
+                                        return "#FF102B";
+                                    } else if (d.field === 'Animation') {
+                                        return "#FFC300";
+                                    } else if (d.field === 'CartoonCharacter') {
+                                        return "#46CDDF";
+                                    }
                                 }
-                            }
-                        )
-
-                    //Show the tooltip
-                    d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(280%, 280%)');
-
-                   //trigger sound
-                   snd.play();
+                            )
+    
+                        //Show the tooltip
+                        d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(280%, 280%)');
+    
+                        //trigger sound
+                        play(setRandomCoord(0.25, 3));
+                    }
 
                 }
 
@@ -261,7 +354,7 @@ d3.json("/db/us.json", function (error, usmap) {
                     d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(220%, 950%)');
 
                     //trigger sound
-                   snd.play();
+                    snd.play();
 
                 }
 
