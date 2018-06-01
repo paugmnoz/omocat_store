@@ -479,6 +479,10 @@ body#checkoutBody {
   font-size: 15px;
 }
 
+.text-rect {
+  font-size: 15px;
+}
+
 @keyframes loading {
   0% {
     width: 0;

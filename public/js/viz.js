@@ -11,6 +11,11 @@ var svg = d3.select("#cat-viz").append("svg")
     .attr("width", '100%')
     .attr("height", height);
 
+    /*var svg = d3.select("#cat-viz").append("svg")
+    .classed("cat-svg-container", true)
+    .attr("width", '100%')
+    .attr("height", height);*/
+
 // 
 var mapsvg = d3.select("#map-viz").append("svg")
     .classed("map-container", true)
@@ -118,6 +123,7 @@ d3.json("/db/us.json", function (error, usmap) {
 
                     // Select text by id and then remove
                     d3.select("#t-" + i).remove();
+                    //d3.select("#r-" + i).remove();
                     console.log("t-" + i);
                 }
 
