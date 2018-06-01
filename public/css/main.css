@@ -535,7 +535,6 @@ body#checkoutBody {
   position: absolute;
   width: 200px;
   height: 100px;
-  padding: 10px;
   background-color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -544,6 +543,18 @@ body#checkoutBody {
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   pointer-events: none;
+}
+
+#tooltip .colorheader {
+  width: 100%;
+  height: 20px;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
+#tooltip .content {
+  padding: 10px;
 }
 
 #tooltip.hidden {

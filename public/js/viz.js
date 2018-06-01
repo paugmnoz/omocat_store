@@ -99,15 +99,10 @@ d3.json("/db/us.json", function (error, usmap) {
 
 
                 function handleMouserOver(d, i) {
-
-                    var circle = d3.select(this);
-
                     d3.select(this).attr({
                         r: (d, i) => setRandomCoord(25, 45)
                     });
 
-                    console.log(circle);
-                    //d3.select('#t-' + i).style('transform', 'translate(30%, 30%)');
                     //Update the tooltip position and value
                     d3.select("#tooltip")
                         .style("left", logoCoords[i][0] + "px")
@@ -116,18 +111,62 @@ d3.json("/db/us.json", function (error, usmap) {
                         .text(d.name);
                         
                     d3.select("#value2")
-                        .text(d.city);
-                        d3.select("#value3")
                         .text(d.field);
+                    d3.select(".colorheader")
+                        .style(
+                            "background-color", function () {
+                                if (d.field === 'ComicBook') {
+                                    console.log('helloooooo');
+                                    return "#FF102B";
+                                } else if (d.field === 'Animation') {
+                                    return "#FFC300";
+                                } else if (d.field === 'CartoonCharacter') {
+                                    return "#46CDDF";
+                                }
+                            }
+                        )
 
                     //Show the tooltip
-                    d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(130%, 150%)');
+                    d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(280%, 280%)');
+
+                }
+
+                function handleMouserOverMap(d, i) {
+                    d3.select(this).attr({
+                        r: (d, i) => setRandomCoord(25, 45)
+                    });
+
+               
+                    //Update the tooltip position and value
+                    d3.select("#tooltip")
+                        .style("left", projection([d.lon, d.lat])[0]  + "px")
+                        .style("top",  projection([d.lon, d.lat])[1]  + "px")
+                        .select("#value")
+                        .text(d.name);
+                        
+                    d3.select("#value2")
+                        .text(d.field);
+                    d3.select(".colorheader")
+                        .style(
+                            "background-color", function () {
+                                if (d.field === 'ComicBook') {
+                                    console.log('helloooooo');
+                                    return "#FF102B";
+                                } else if (d.field === 'Animation') {
+                                    return "#FFC300";
+                                } else if (d.field === 'CartoonCharacter') {
+                                    return "#46CDDF";
+                                }
+                            }
+                        )
+
+                    //Show the tooltip
+                    d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(220%, 950%)');
 
                 }
 
                 function handleMouseOut(d, i) {
                     // Use D3 to select element, change color and size
-
                     d3.select(this).attr({
                         r: (d, i) => setRandomCoord(3, 5)
                     });
@@ -176,7 +215,7 @@ d3.json("/db/us.json", function (error, usmap) {
                     })
 
 
-                d3.selectAll('.map-circles').on("mouseover", handleMouserOver)
+                d3.selectAll('.map-circles').on("mouseover", handleMouserOverMap)
                 d3.selectAll('.map-circles').on("mouseout", handleMouseOut)
 
 
@@ -190,12 +229,12 @@ d3.json("/db/us.json", function (error, usmap) {
     });
 });
 
-d3.csv("/db/artistsDB850.csv", function (error, artists) {
+d3.csv("/db/artistsDB850.csv", function (error, artists850) {
     d3.json('/db/visitus_coordinator.json', function (error, rectCoords) {
         //VISIT US VIZ
         d3.select('.visitviz').style('transform', 'translate(25%, 110%)');
 
-        gvisit.selectAll(".visit-circles").data(artists)
+        gvisit.selectAll(".visit-circles").data(artists850)
             .enter().append("circle")
             .classed("visit-circles", true)
             .attr("cx", (d, i) => rectCoords[i][0])
