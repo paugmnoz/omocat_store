@@ -70,25 +70,29 @@ d3.json("/db/us.json", function (error, usmap) {
                     .attr("r", (d, i) => getRandomInt(5))
                     .attr("cx", (d, i) => logoCoords[i][0])
                     .attr("cy", (d, i) => logoCoords[i][1] - 200);
-                    
-                    d3.selectAll('circle').on("mouseover", handleMouserOver)
-                    d3.selectAll('circle').on("mouseout", handleMouseOut)
 
+                d3.selectAll('circle').on("mouseover", handleMouserOver)
+                d3.selectAll('circle').on("mouseout", handleMouseOut)
 
 
                 function handleMouserOver(d, i) {
                     var circle = d3.select(this);
 
+                    d3.select(this).attr({
+                        r: (d, i) => setRandomCoord(25, 45)
+                    });
+
                     // Specify where to put label of text
                     svg
                         .append("text")
-                        .attr("id", "t-" + i)
-                        .attr("font-family", "sans-serif")
-                        .attr("font-size", "50px")
-                        .attr("fill", "black")
-                        .attr("x", logoCoords[i][0])
-                        .attr("y", logoCoords[i][1] - 200)
-                        .text("Hello there!");
+                        .classed("text-viz", true)
+                        .attr({
+                            id: "t-" + i,
+                            x: logoCoords[i][0],
+                            y: logoCoords[i][1] - 200
+                        })
+                        .text(d.name);
+
                     console.log(circle);
                     d3.select('#t-' + i).style('transform', 'translate(30%, 30%)');
                 }
@@ -96,13 +100,16 @@ d3.json("/db/us.json", function (error, usmap) {
                 function handleMouseOut(d, i) {
                     // Use D3 to select element, change color and size
 
+                    d3.select(this).attr({
+                        r: (d, i) => setRandomCoord(3, 5)
+                    });
 
                     // Select text by id and then remove
                     d3.select("#t-" + i).remove();
                     console.log("t-" + i);
                 }
 
-            
+
                 //    
 
 
