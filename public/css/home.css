@@ -1,0 +1,475 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.2s;
+}
+
+.promo {
+  width: 40%;
+  position: absolute;
+  margin: 40% 0 0 30%;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.welcome .leftImgs {
+  width: 30%;
+  height: auto;
+  margin-top: 8em;
+  margin-bottom: 6.5em;
+  float: left;
+}
+
+.welcome .leftImgs img {
+  width: 100%;
+}
+
+.welcome .seasonQuote {
+  margin: 10em auto 0 10%;
+  z-index: 5;
+}
+
+.welcome .seasonQuote h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 40pt;
+  font-weight: 900;
+}
+
+.welcome .seasonQuote h1.second {
+  margin-left: 1em;
+}
+
+.welcome .seasonQuote h1.third {
+  margin-left: 6em;
+}
+
+.welcome .rightImgs {
+  float: right;
+  width: 37%;
+  height: auto;
+  margin-top: -4em;
+  margin-right: 120px;
+  z-index: 100;
+}
+
+.welcome .rightImgs img {
+  width: 100%;
+}
+
+.bottomNav {
+  position: absolute;
+  padding-left: 5%;
+  margin-top: -2em;
+}
+
+.bottomNav a {
+  color: black;
+  font-variant: small-caps;
+}
+
+.bottomNav a.bottommenuOptions {
+  font-weight: 700;
+  font-size: 21;
+  margin-right: 2em;
+  transition: 1s;
+  align-items: center;
+}
+
+.bottomNav a.bottommenuOptions:hover {
+  color: #ff4746;
+}
+
+.theTeam {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.theTeam .teamPhoto {
+  background-color: #ff4746;
+  height: 400px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.theTeam .teamPhoto .weAre {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.theTeam .teamPhoto .weAre h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 30;
+  font-weight: 900;
+  color: white;
+}
+
+.theTeam .teamPhoto .weAre h1.second {
+  margin-left: 1em;
+}
+
+.theTeam .teamPhoto .teamImgDiv {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  width: 60%;
+}
+
+.theTeam .teamPhoto .teamImgDiv img {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin: auto;
+  width: 100%;
+}
+
+.theTeam .descriptionTeam {
+  width: 50%;
+  padding: 5em 0 0 2em;
+}
+
+.theTeam .descriptionTeam h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 30;
+  font-weight: 900;
+  margin-bottom: 1em;
+  color: black;
+}
+
+.theTeam .descriptionTeam .description {
+  width: 60%;
+}
+
+.theTeam .descriptionTeam .description p {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 200;
+  font-size: 16;
+  margin-bottom: 1em;
+}
+
+.theTeam .descriptionTeam .description p:last-child {
+  margin-bottom: 3em;
+}
+
+.theTeam .descriptionTeam .rect {
+  width: 50px;
+  height: 10px;
+  background-color: #ff4746;
+}
+
+.titleSectionServ {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2em;
+  margin-top: 3em;
+}
+
+.titleSectionServ h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 30;
+  font-weight: 900;
+  color: black;
+}
+
+.services {
+  width: 80%;
+  margin: auto;
+  height: 600px;
+}
+
+.services .servDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-around;
+  align-items: flex-start;
+}
+
+.services .servDiv .service {
+  width: 30%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.services .servDiv .service h2 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 22;
+  font-weight: 800;
+  font-variant: small-caps;
+  color: black;
+}
+
+.services .servDiv .service .rect {
+  width: 100px;
+  height: 10px;
+  background-color: #ff4746;
+}
+
+.services .servDiv .service .frontFace {
+  width: 20%;
+  margin-top: 3em;
+  position: absolute;
+  transform: perspective(0) rotateY(0deg);
+  backface-visibility: hidden;
+  transition: transform .5s linear 0s;
+}
+
+.services .servDiv .service .frontFace img {
+  width: 100%;
+}
+
+.services .servDiv .service .frontFace:hover {
+  transform: perspective(0) rotateY(-180deg);
+}
+
+.services .servDiv .service .backFace {
+  position: absolute;
+  transform: perspective(0) rotateY(180deg);
+  backface-visibility: hidden;
+  transition: transform .5s linear 0s;
+  background-color: #ff4746;
+}
+
+.services .servDiv .service .backFace h2 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 22;
+  font-weight: 800;
+  font-variant: small-caps;
+  color: black;
+}
+
+.services .servDiv .service .backFace p {
+  font-family: "Work Sans", sans-serif;
+  color: white;
+}
+
+.services .servDiv .service .backFace:hover {
+  transform: perspective(0) rotateY(0deg);
+}
+
+.bestsellersGallery {
+  width: 100%;
+  background-color: #2bb8c0;
+}
+
+.bestsellersGallery h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 30;
+  font-weight: 900;
+  color: white;
+  padding: 1em;
+  float: right;
+}
+
+.bestsellersGallery .gallery {
+  width: 100%;
+  height: auto;
+}
+
+.bestsellersGallery .gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.bestsellersGallery .gallery .btnControl {
+  display: block;
+  position: absolute;
+  margin-top: -30%;
+  width: 100%;
+}
+
+.bestsellersGallery .gallery .btnControl .btn {
+  padding: 1em;
+  color: white;
+  background-color: #2bb8c0;
+  border: none;
+}
+
+.bestsellersGallery .gallery .btnControl .btn.btndisplayRight {
+  float: right;
+}
+
+.specifications {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.specifications .spechItem {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.specifications h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 30;
+  font-weight: 900;
+  color: black;
+}
+
+.specifications .stuffDetails {
+  width: 50%;
+  padding: 8em 2em 2em 5%;
+}
+
+.specifications .stuffDetails h1 {
+  margin-bottom: 1em;
+}
+
+.specifications .stuffDetails p {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16;
+  margin-bottom: 1em;
+}
+
+.specifications .product {
+  width: 50%;
+  height: 500px;
+  background-color: #fbeb00;
+  display: flex;
+  justify-content: center;
+}
+
+.specifications .product img {
+  height: 100%;
+}
+
+.footer {
+  width: 100%;
+}
+
+.footer .artist {
+  width: 12%;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 2%;
+  margin-top: -480px;
+}
+
+.footer .realFooter {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  margin-top: 100px;
+}
+
+.footer .realFooter .aboutlinks {
+  width: 65%;
+  height: 400px;
+  background-color: #f3a5b2;
+  animation: loading 2s linear;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: flex-end;
+}
+
+.footer .realFooter .aboutlinks .links {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin-top: 30%;
+  padding-right: 10%;
+}
+
+.footer .realFooter .aboutlinks .links h3 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+
+.footer .realFooter .aboutlinks .links .ul {
+  list-style: none;
+  color: white;
+}
+
+.footer .realFooter .aboutlinks .links .ul li:last-child {
+  margin-bottom: 1em;
+}
+
+.footer .realFooter .aboutlinks .links .ul.social.about {
+  display: inline-block;
+}
+
+.footer .realFooter .aboutlinks .iconFooter {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  padding-right: 10.5%;
+}
+
+.footer .realFooter .aboutlinks .iconFooter img {
+  width: 60%;
+}
+
+.footer .realFooter .newsletter {
+  width: 35%;
+  display: block;
+  position: absolute;
+  margin-left: 70%;
+}
+
+.footer .realFooter .newsletter p {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 21;
+  margin-bottom: 0.7em;
+}
+
+.footer .realFooter .newsletter input {
+  display: block;
+  padding: 5px 2px 1px 2px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16;
+  margin-bottom: 1em;
+}
+
+.footer .realFooter .newsletter button {
+  padding: 7px 15px 7px 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16;
+  transition: all 0.2s;
+}
+
+.footer .realFooter .newsletter button:hover {
+  background-color: #ff4746;
+}
+/*# sourceMappingURL=home.css.map */

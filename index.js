@@ -32,15 +32,15 @@ MongoClient.connect(`mongodb+srv://cluster0-fxkcz.mongodb.net/test`, {
             var server = app.listen(process.env.PORT || 1889);
         }
     });
-   
-app.get('/', (req, res) => {
-    /*    db.collection('camisas')
-        .find()
-        .toArray((err, result) => {
-            res.render('index', {
-                camisas: result
-            });//fin res.render
-        })*/
+   app.get('/', (req,res) => {
+    res.render('viz'); //fin res.render
+   });
+
+   app.get('/home', (req,res) => {
+    res.render('index'); //fin res.render
+   });
+app.get('/store', (req, res) => {
+  
     var product = db.collection('sweaters')
         .find();
 
@@ -75,7 +75,7 @@ app.get('/', (req, res) => {
     
 
     product.toArray((err, result) => {
-        res.render('index', {
+        res.render('store', {
             sweaters: result
         }); //fin res.render
     });

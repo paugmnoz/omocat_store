@@ -416,10 +416,9 @@ body#checkoutBody {
     padding: 0 auto 0 auto;
 }
 
-.catviz {
-    order: 0;
+.catsection {
+    margin-bottom: 3em;
 }
-
 
 
 .text-container{
@@ -432,10 +431,6 @@ body#checkoutBody {
     font-size: 15px;
 }
 
-.text-rect{
-    font-size: 15px;
-}
-
 @keyframes loading {
     0% {
         width: 0;
@@ -445,26 +440,111 @@ body#checkoutBody {
     }
 }
 
-.title {
+.viztitle {
   align-content: center;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1em 0 1em 0;
+
+}
+
+.mapsection {
+    .viztitle {
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 3em 0 3em 0;
+      }
 }
 
 .background {
-  fill: none;
+  fill: orange;
   pointer-events: all;
 }
 
+.background_none {
+    fill: none;
+    pointer-events: all;
+  }
+
 .feature {
-  fill: #eee;
+  fill: rgb(250, 250, 250);
   cursor: pointer;
 }
 
 .mesh {
   fill: none;
-  stroke: #fff;
+  stroke: orange;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke-width: 5pt;
 }
+
+#visit-viz {
+    margin: 4em 0 8em 0;
+}
+
+
+#tooltip {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+
+    background-color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+
+    .colorheader {
+        width: 100%;
+        height: 20px;
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
+#tooltip.hidden {
+    display: none;
+}
+
+#tooltip p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+}
+    .map{
+        background-color: orange;
+
+    }
+
+
+    .viz_filters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: flex-start;
+
+    .vizbtn{
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        &.selected {
+            background-color: #ff4746;
+
+        }
+    }
+    }
+
