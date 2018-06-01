@@ -6,33 +6,32 @@
 $font: 'Work Sans',
 sans-serif;
 $loadingTime: 2s;
-
 a {
     text-decoration: none;
     font-family: $font;
     transition: all 0.2s;
 }
 
-.mainBtn{
+.mainBtn {
     padding: 7px 15px 7px 10px;
-border: none;
-background-color: black;
-color: white;
-font-family: "Work Sans", sans-serif;
-font-weight: 600;
-font-size: 16;
-transition: all 0.2s;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16;
+    transition: all 0.2s;
 }
 
 .mainBtn:hover {
-    background-color:#ff4746;
-
+    background-color: #ff4746;
 }
 
 hr {
-    border-top: 0.8px solid  rgb(156, 156, 156);
+    border-top: 0.8px solid rgb(156, 156, 156);
     background-color: rgb(202, 202, 202);
 }
+
 body {
     margin: 0;
     font-family: $font;
@@ -120,7 +119,6 @@ body {
         align-self: auto;
         width: 50%;
         height: auto;
-
         .displayBlock {
             display: block;
         }
@@ -232,7 +230,6 @@ body#checkoutBody {
     .left {
         width: 60%;
         display: inline-block;
-
         hr {
             width: 80%;
         }
@@ -260,7 +257,6 @@ body#checkoutBody {
             align-content: flex-start;
             align-items: flex-start;
             width: 100%;
-
             h4 {
                 margin-bottom: 1em;
             }
@@ -293,16 +289,16 @@ body#checkoutBody {
                 align-self: center;
             }
         }
-
-        .sub_div , .ship_div {
+        .sub_div,
+        .ship_div {
             color: rgb(87, 87, 87);
         }
-
         .ship_div {
             margin-bottom: 1em;
         }
-
-        .sub_div , .ship_div, .total_div  {
+        .sub_div,
+        .ship_div,
+        .total_div {
             width: 78%;
             display: flex;
             flex-direction: row;
@@ -311,21 +307,17 @@ body#checkoutBody {
             align-content: flex-start;
             align-items: flex-start;
             padding: 1em 2em 0 0;
-            
             p {
                 order: 0;
                 flex: 0 1 auto;
                 align-self: auto;
             }
-
-            h3{
+            h3 {
                 order: 0;
                 flex: 0 1 auto;
                 align-self: auto;
             }
         }
-
-      
     }
     .right {
         width: 30%;
@@ -337,18 +329,15 @@ body#checkoutBody {
             font-weight: 500;
             margin-bottom: 1em;
         }
-        input{
+        input {
             padding: 10px;
             margin: 0 0 1em 0;
             &.longInput {
                 width: 93%;
             }
-
-
             &.shortInput {
                 width: 43%;
             }
-
             &.blockInput {
                 display: block;
                 width: 93%;
@@ -371,19 +360,17 @@ body#checkoutBody {
         align-self: auto;
         width: 45%;
         background-color: rgb(250, 250, 250) !important;
-
-        img{
+        img {
             width: 100%;
             height: auto;
         }
     }
-
     .right {
         order: 0;
         flex: 0 1 auto;
         align-self: auto;
         width: 45%;
-        img{
+        img {
             width: 80%;
             height: auto;
         }
@@ -391,7 +378,6 @@ body#checkoutBody {
 }
 
 //VIZ
-
 .vizNav {
     width: 100%;
     height: 60px;
@@ -419,47 +405,31 @@ body#checkoutBody {
         }
     }
 }
+
 #viz {
     width: 100%;
     height: 900px;
 }
+
 .cat-svg-container {
     width: 100%;
     padding: 0 auto 0 auto;
-
-
 }
 
 .catviz {
     order: 0;
-  
 }
 
-.title{
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.text-container{
+   background-color: black;
+   width: 200px;
+   height: 200px;
 }
 
-.background {
-    fill: none;
-    pointer-events: all;
-  }
-  
-  .feature {
-    fill: #eee;
-    cursor: pointer;
-  }
-  
-  
-  .mesh {
-    fill: none;
-    stroke: #fff;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  
+.text-viz{
+    font-size: 15px;
+}
+
 @keyframes loading {
     0% {
         width: 0;
@@ -467,4 +437,28 @@ body#checkoutBody {
     100% {
         width: 65%;
     }
+}
+
+.title {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.feature {
+  fill: #eee;
+  cursor: pointer;
+}
+
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
