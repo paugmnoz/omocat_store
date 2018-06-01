@@ -527,3 +527,24 @@ body#checkoutBody {
         background-color: orange;
 
     }
+
+
+    .viz_filters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: flex-start;
+
+    .vizbtn{
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        &.selected {
+            background-color: #ff4746;
+
+        }
+    }
+    }
+

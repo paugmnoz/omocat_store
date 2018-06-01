@@ -50,7 +50,10 @@ var gmap = mapsvg.append("g")
 var gvisit = visitsvg.append("g")
     .classed("visitviz", true)
 
-
+var comic_btn =     d3.select('#comicBook');
+var animation_btn =     d3.select('#Animation');
+var cartoon_btn =     d3.select('#CartoonCharacter');
+var all_btn =     d3.select('#all').classed("selected", true);
 
 //select colors for data viz (dots)
 //var colors = d3.scale.category10();
@@ -67,6 +70,7 @@ function getRandomInt(max) {
 function setRandomCoord(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
 //add database for viz
 d3.json("/db/us.json", function (error, usmap) {
     d3.csv("/db/artistsDB.csv", function (error, artists) {
@@ -96,6 +100,85 @@ d3.json("/db/us.json", function (error, usmap) {
                     .attr("cx", (d, i) => logoCoords[i][0])
                     .attr("cy", (d, i) => logoCoords[i][1] - 200);
 
+                    comic_btn.on('click', function() {
+                        comic_btn.classed("selected", true)
+                        animation_btn.classed("selected", false)
+                        cartoon_btn.classed("selected", false)
+                        all_btn.classed("selected", false)
+                        d3.selectAll('.cat-circles')
+                        .transition()
+                        .duration(500)
+                        .delay(500)
+                        .attr("fill", function (d) {
+                            if (d.field === 'ComicBook') {
+                                return "#FF102B";
+                            } else if (d.field === 'Animation') {
+                                return "#f2efef";
+                            } else if (d.field === 'CartoonCharacter') {
+                                return "#f2efef";
+                            }
+                        })
+                    });
+
+                    animation_btn.on('click', function() {
+                        comic_btn.classed("selected", false)
+                        animation_btn.classed("selected", true)
+                        cartoon_btn.classed("selected", false)
+                        all_btn.classed("selected", false)
+                        d3.selectAll('.cat-circles')
+                        .transition()
+                        .duration(500)
+                        .delay(500)
+                        .attr("fill", function (d) {
+                            if (d.field === 'ComicBook') {
+                                return "#f2efef";
+                            } else if (d.field === 'Animation') {
+                                return "#FFC300";
+                            } else if (d.field === 'CartoonCharacter') {
+                                return "#f2efef";
+                            }
+                        })
+                    });
+
+                    cartoon_btn.on('click', function() {
+                        comic_btn.classed("selected", false)
+                        animation_btn.classed("selected", false)
+                        cartoon_btn.classed("selected", true)
+                        all_btn.classed("selected", false)
+                        d3.selectAll('.cat-circles')
+                        .transition()
+                        .duration(500)
+                        .delay(500)
+                        .attr("fill", function (d) {
+                            if (d.field === 'ComicBook') {
+                                return "#f2efef";
+                            } else if (d.field === 'Animation') {
+                                return "#f2efef";
+                            } else if (d.field === 'CartoonCharacter') {
+                                return "#46CDDF";
+                            }
+                        })
+                    });
+
+                    all_btn.on('click', function() {
+                        comic_btn.classed("selected", false)
+                        animation_btn.classed("selected", false)
+                        cartoon_btn.classed("selected", false)
+                        all_btn.classed("selected", true)
+                        d3.selectAll('.cat-circles')
+                        .transition()
+                        .duration(500)
+                        .delay(500)
+                        .attr("fill", function (d) {
+                            if (d.field === 'ComicBook') {
+                                return "#FF102B";
+                            } else if (d.field === 'Animation') {
+                                return "#FFC300";
+                            } else if (d.field === 'CartoonCharacter') {
+                                return "#46CDDF";
+                            }
+                        })
+                    });
                 d3.selectAll('.cat-circles').on("mouseover", handleMouserOver)
                 d3.selectAll('.cat-circles').on("mouseout", handleMouseOut)
 
@@ -150,7 +233,7 @@ d3.json("/db/us.json", function (error, usmap) {
                         .text(d.name);
                         
                     d3.select("#value2")
-                        .text(d.field);
+                        .text(d.city);
                     d3.select(".colorheader")
                         .style(
                             "background-color", function () {

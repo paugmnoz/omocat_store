@@ -570,4 +570,23 @@ body#checkoutBody {
 .map {
   background-color: orange;
 }
+
+.viz_filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.viz_filters .vizbtn {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.viz_filters .vizbtn.selected {
+  background-color: #ff4746;
+}
 /*# sourceMappingURL=main.css.map */
