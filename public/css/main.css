@@ -465,8 +465,8 @@ body#checkoutBody {
   padding: 0 auto 0 auto;
 }
 
-.catviz {
-  order: 0;
+.catsection {
+  margin-bottom: 3em;
 }
 
 .text-container {
@@ -493,22 +493,70 @@ body#checkoutBody {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1em 0 1em 0;
+}
+
+.mapsection .title {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3em 0 3em 0;
 }
 
 .background {
+  fill: orange;
+  pointer-events: all;
+}
+
+.background_none {
   fill: none;
   pointer-events: all;
 }
 
 .feature {
-  fill: #eee;
+  fill: #fafafa;
   cursor: pointer;
 }
 
 .mesh {
   fill: none;
-  stroke: #fff;
+  stroke: orange;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke-width: 5pt;
+}
+
+#visit-viz {
+  margin: 4em 0 8em 0;
+}
+
+#tooltip {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  background-color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+#tooltip p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.map {
+  background-color: orange;
 }
 /*# sourceMappingURL=main.css.map */

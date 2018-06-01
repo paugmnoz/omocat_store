@@ -5,41 +5,52 @@ var width = 960,
     height = 600,
     active = d3.select(null);
 
+//Width and height div
+var w = 600;
+var h = 250;
+
 //append svg element to html body with height and width
 var svg = d3.select("#cat-viz").append("svg")
     .classed("cat-svg-container", true)
     .attr("width", '100%')
     .attr("height", height);
 
-// 
+// To paint map
 var mapsvg = d3.select("#map-viz").append("svg")
     .classed("map-container", true)
     .attr("width", '100%')
     .attr("height", height);
-    mapsvg.append("rect")
+mapsvg.append("rect")
     .attr("class", "background")
-    .attr("width",  '100%')
+    .attr("width", '100%')
     .attr("height", height)
 
-/*
-svg.append("rect")
-    .attr("class", "background")
-    .attr("width", width)
-    .attr("height", height);*/
+// To paint visit us
+var visitsvg = d3.select("#visit-viz").append("svg")
+    .classed("visit-container", true)
+    .attr("width", '100%')
+    .attr("height", '150px');
+visitsvg.append("rect")
+    .attr("class", "background_none")
+    .attr("width", '100%')
+    .attr("height", '150px')
 
 //to make groups
 var g = svg.append("g")
-.classed("catviz", true)
+    .classed("catviz", true)
 
 var gmap = mapsvg.append("g")
     .classed("mapviz", true)
+
+var gvisit = visitsvg.append("g")
+    .classed("visitviz", true)
+
 
 
 //select colors for data viz (dots)
 //var colors = d3.scale.category10();
 
-var projection = d3.geo.albersUsa()
-  ;
+var projection = d3.geo.albersUsa();
 
 var path = d3.geo.path()
     .projection(projection);
@@ -88,25 +99,30 @@ d3.json("/db/us.json", function (error, usmap) {
 
 
                 function handleMouserOver(d, i) {
+
                     var circle = d3.select(this);
 
                     d3.select(this).attr({
                         r: (d, i) => setRandomCoord(25, 45)
                     });
 
-                    // Specify where to put label of text
-                    svg
-                        .append("text")
-                        .classed("text-viz", true)
-                        .attr({
-                            id: "t-" + i,
-                            x: logoCoords[i][0],
-                            y: logoCoords[i][1] - 200
-                        })
-                        .text(d.name);
-
                     console.log(circle);
-                    d3.select('#t-' + i).style('transform', 'translate(30%, 30%)');
+                    //d3.select('#t-' + i).style('transform', 'translate(30%, 30%)');
+                    //Update the tooltip position and value
+                    d3.select("#tooltip")
+                        .style("left", logoCoords[i][0] + "px")
+                        .style("top", logoCoords[i][1] - 200 + "px")
+                        .select("#value")
+                        .text(d.name);
+                        
+                    d3.select("#value2")
+                        .text(d.city);
+                        d3.select("#value3")
+                        .text(d.field);
+
+                    //Show the tooltip
+                    d3.select("#tooltip").classed("hidden", false).style('transform', 'translate(130%, 150%)');
+
                 }
 
                 function handleMouseOut(d, i) {
@@ -115,13 +131,11 @@ d3.json("/db/us.json", function (error, usmap) {
                     d3.select(this).attr({
                         r: (d, i) => setRandomCoord(3, 5)
                     });
-
-                    // Select text by id and then remove
-                    d3.select("#t-" + i).remove();
-                    console.log("t-" + i);
+                    //Show the tooltip
+                    d3.select("#tooltip").classed("hidden", true)
                 }
 
-                
+
                 /// MAP VISUALIZATION
                 d3.select('.mapviz').style('transform', 'translate(20%, 0%)');
 
@@ -131,7 +145,7 @@ d3.json("/db/us.json", function (error, usmap) {
                     .attr("d", path)
                     .attr("class", "feature")
 
-                    gmap.selectAll("path")
+                gmap.selectAll("path")
                     .append("path")
                     .datum(topojson.mesh(usmap, usmap.objects.states, function (a, b) {
                         return a !== b;
@@ -150,22 +164,25 @@ d3.json("/db/us.json", function (error, usmap) {
                     .delay(3000)
                     .attr("cx", d => projection([d.lon, d.lat]) ? projection([d.lon, d.lat])[0] : -1000)
                     .attr("cy", d => projection([d.lon, d.lat]) ? projection([d.lon, d.lat])[1] : -8000)
-                   .attr("r", 3)
-                   .attr("fill", function (d) {
-                    if (d.field === 'ComicBook') {
-                        return "#FF102B";
-                    } else if (d.field === 'Animation') {
-                        return "#FFC300";
-                    } else if (d.field === 'CartoonCharacter') {
-                        return "#46CDDF";
-                    }
-                })
+                    .attr("r", 3)
+                    .attr("fill", function (d) {
+                        if (d.field === 'ComicBook') {
+                            return "#FF102B";
+                        } else if (d.field === 'Animation') {
+                            return "#FFC300";
+                        } else if (d.field === 'CartoonCharacter') {
+                            return "#46CDDF";
+                        }
+                    })
 
-                    
+
                 d3.selectAll('.map-circles').on("mouseover", handleMouserOver)
                 d3.selectAll('.map-circles').on("mouseout", handleMouseOut)
-                  
+
+
+
                 //    
+
 
             });
 
@@ -173,4 +190,33 @@ d3.json("/db/us.json", function (error, usmap) {
     });
 });
 
-sr.reveal('.reveal', {duration: 2000});
+d3.csv("/db/artistsDB850.csv", function (error, artists) {
+    d3.json('/db/visitus_coordinator.json', function (error, rectCoords) {
+        //VISIT US VIZ
+        d3.select('.visitviz').style('transform', 'translate(25%, 110%)');
+
+        gvisit.selectAll(".visit-circles").data(artists)
+            .enter().append("circle")
+            .classed("visit-circles", true)
+            .attr("cx", (d, i) => rectCoords[i][0])
+            .attr("cy", (d, i) => rectCoords[i][1] - 200)
+            .attr("r", setRandomCoord(2, 3))
+            .attr("fill", function (d) {
+                if (d.field === 'ComicBook') {
+                    return "#FF102B";
+                } else if (d.field === 'Animation') {
+                    return "#FFC300";
+                } else if (d.field === 'CartoonCharacter') {
+                    return "#46CDDF";
+                }
+            })
+            .transition()
+            .duration(2000)
+            .delay(3000)
+
+    });
+});
+
+sr.reveal('.reveal', {
+    duration: 2000
+});
