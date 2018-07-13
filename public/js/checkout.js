@@ -4,7 +4,7 @@ arreglo.forEach(function(elemento){
     lista.innerHTML += '<li>'+ elemento + '</li>';
 });*/
 
-fetch(  'https://' + window.location + '/productosPorIds?ids=' + arreglo)
+fetch(  'https://' + window.location.hostname + '/productosPorIds?ids=' + arreglo)
     .then(function (res) {
         return res.json();
     })
