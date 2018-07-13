@@ -48,3 +48,10 @@ $(window).scroll(function() {
      console.log("sdfasdlhfañsdjfkmasdñ");
      promo.remove();
  });
+
+ window.sr = ScrollReveal();
+
+
+sr.reveal('.reveal', {
+    duration: 2000
+});
