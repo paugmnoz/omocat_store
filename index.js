@@ -32,15 +32,15 @@ MongoClient.connect(`mongodb+srv://cluster0-fxkcz.mongodb.net/test`, {
             var server = app.listen(process.env.PORT || 1889);
         }
     });
-   app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.render('viz'); //fin res.render
-   });
+});
 
-   app.get('/home', (req,res) => {
+app.get('/home', (req, res) => {
     res.render('index'); //fin res.render
-   });
+});
 app.get('/store', (req, res) => {
-  
+
     var product = db.collection('sweaters')
         .find();
 
@@ -49,30 +49,34 @@ app.get('/store', (req, res) => {
             artista: req.query.artista
         });
 
-        if (req.query.color)
+    if (req.query.color)
         product.filter({
             color: req.query.color
         });
 
-        if (req.query.color)
+    if (req.query.color)
         product.filter({
             color: req.query.color
         });
 
-        if(req.query.min & req.query.max) {
-            var {min, max} = req.query;
-            console.log(max)
-    
-            product.filter({
+    if (req.query.min & req.query.max) {
+        var {
+            min,
+            max
+        } = req.query;
+        console.log(max)
+
+        product.filter({
                 precio: {
-                    $gt: parseFloat(min-1), $lt: parseFloat(max+1)
+                    $gt: parseFloat(min - 1),
+                    $lt: parseFloat(max + 1)
                 }
             }
-               
-               );
-            }
-  
-    
+
+        );
+    }
+
+
 
     product.toArray((err, result) => {
         res.render('store', {
@@ -91,21 +95,20 @@ app.get('/checkout', (req, res) => {
 
 app.get('/sweater/:id', (req, res) => {
     db.collection('sweaters').find({
-            uri_name:  req.params.id
+            uri_name: req.params.id
         })
         .toArray((err, result) => {
             //res.render(result) //fin res.render
             res.render('sweater_detail', {
-                  prod: result                
-                });
-           });
+                prod: result
+            });
+        });
 });
 
 app.get('/viz', (req, res) => {
 
-            res.render('viz', {
-                });
-        
+    res.render('viz', {});
+
 });
 
 app.get('/productosPorIds', (req, res) => {

@@ -14,14 +14,14 @@
 
 <body>
 
-    <nav class="globalNav">
+    <nav class="globalNav reveal">
         <img class="icon" src="/img/brand/icon.png" alt="">
         <a href="/home" class="typoLogo">Omocat</a>
         <a href="/store" class="menuOptions">store</a>
         <a href="#" class="menuOptions">artwork</a>
         <a href="#" class="menuOptions">us</a>
         <a href="#" class="menuOptions">contact</a>
-                <a href="/" class="menuOptions">Viz</a>
+        <a href="/" class="menuOptions">Viz</a>
 
         <div class="filler"></div>
         <a href="checkout">
@@ -39,9 +39,9 @@
     </nav>
 
 
-    <section class="container">
+    <section class="container ">
 
-        <section class="filters">
+        <section class="filters reveal">
             <div class="left">
                 <h1 class="title shadow">CLOTHING</h1>
                 <h1 class="title overshadow">SWEATERS</h1>
@@ -62,32 +62,34 @@
                 <a href="/">All</a>
 
                 <h3>PRICE</h3>
-                <a>Min.  30 <input type="range" name="" id="slider" min="30" max="60"> 60 </a>     
+                <a>Min. 30
+                    <input type="range" name="" id="slider" min="30" max="60"> 60 </a>
                 <br/>
                 <br/>
-                <a class="displayBlock">Max.  30 <input type="range" name="" id="sliderMax" min="30" max="60"> 60 </a>    
-                                <br/>
+                <a class="displayBlock">Max. 30
+                    <input type="range" name="" id="sliderMax" min="30" max="60"> 60 </a>
+                <br/>
                 <br/>
 
 
                 <a href="/#results" class="clear_filter displayBlock">Clear</a>
-                                <br/>
+                <br/>
 
-    <button class="minMax mainBtn">Search by Price</button>
+                <button class="minMax mainBtn">Search by Price</button>
 
 
             </div>
-            <div class="right">
+            <div class="right ">
                 <img src="/img/clothing_sweater_models.jpg" class="img_models" alt="">
             </div>
         </section>
 
-        <section id="results">
+        <section id="results" class="reveal">
             <h2>RESULTS</h2>
         </section>
         <section class="prod_results">
             {{#each sweaters}}
-            <div class="sweater" data-id="{{this._id}}">
+            <div class="sweater reveal" data-id="{{this._id}}">
                 <a href="/sweater/{{uri_name}}">
 
                     <img class="productImg principal" src="/{{img_principal}}" alt="">
@@ -105,9 +107,10 @@
 
 
     <script src='js/cliente.js'></script>
+
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script src='js/productos.js'></script>
     <script src='js/script.js'></script>
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+
+
 var h =  window.innerHeight;
 
 var welcomeSection = document.getElementsByClassName("welcome");
@@ -44,9 +46,10 @@ $(window).scroll(function() {
 
      }
  });
+
  window.sr = ScrollReveal();
 
 
- sr.reveal('.reveal', {
-     duration: 2000
- });
+sr.reveal('.reveal', {
+    duration: 2000
+});
