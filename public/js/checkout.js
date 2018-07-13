@@ -4,7 +4,7 @@ arreglo.forEach(function(elemento){
     lista.innerHTML += '<li>'+ elemento + '</li>';
 });*/
 
-fetch('http://localhost:1889/productosPorIds?ids=' + arreglo)
+fetch( window.location + '/productosPorIds?ids=' + arreglo)
     .then(function (res) {
         return res.json();
     })
@@ -50,3 +50,9 @@ fetch('http://localhost:1889/productosPorIds?ids=' + arreglo)
     }
 
     );
+    window.sr = ScrollReveal();
+
+
+sr.reveal('.reveal', {
+    duration: 2000
+});

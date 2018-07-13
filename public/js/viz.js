@@ -282,9 +282,10 @@ d3.json("/db/us.json", function (error, usmap) {
 
                     if(d3.select(this).classed('cat-highlighted')===true){
 
-                        d3.select(this).attr({
-                            r: (d, i) => setRandomCoord(25, 45)
-                        });
+                        d3.select(this)
+                        .attr({r: (d, i) => setRandomCoord(25, 45)
+                        })
+                        
     
                         //Update the tooltip position and value
                         d3.select("#tooltip")

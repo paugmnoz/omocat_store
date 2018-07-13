@@ -23,3 +23,10 @@ document.querySelectorAll('.add').forEach(function (button) {
         localStorage.setItem('arreglo', JSON.stringify(arreglo));
     });
 });
+
+window.sr = ScrollReveal();
+
+
+sr.reveal('.reveal', {
+    duration: 2000
+});
