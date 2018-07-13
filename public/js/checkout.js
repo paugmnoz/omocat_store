@@ -4,12 +4,13 @@ arreglo.forEach(function(elemento){
     lista.innerHTML += '<li>'+ elemento + '</li>';
 });*/
 
-fetch( window.location + '/productosPorIds?ids=' + arreglo)
+fetch(  window.location + '/productosPorIds?ids=' + arreglo)
     .then(function (res) {
         return res.json();
     })
     .then(function (res) {
 //        console.log(res);
+
         var lista = document.querySelector('.lista');
         var subtotal= document.querySelector('.subtotal');
         var total = document.querySelector('.total');
@@ -41,6 +42,7 @@ fetch( window.location + '/productosPorIds?ids=' + arreglo)
                 });
 
             });
+
      
         });
     });

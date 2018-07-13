@@ -20,6 +20,7 @@ function showDivs(n) {
     }
     x[slideIndex-1].style.display = "block";
 }
+console.log( window.location);
 
 $(window).scroll(function() {
 

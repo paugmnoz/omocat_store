@@ -8,4 +8,5 @@ console.log(arreglo);
 
 actualizarCarrito();
 
+console.log( window.location.hostname);
 
